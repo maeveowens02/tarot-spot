@@ -339,3 +339,23 @@ footer {
   opacity: 0 !important;
   pointer-events: none !important;
 }
+/* ----------------------------------------------
+   BLOCK ALL TOP ADS FROM PUSHING CONTENT DOWN
+------------------------------------------------*/
+
+ins.adsbygoogle {
+  display: none !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+iframe[src*="ads"],
+iframe[id*="google_ads"],
+.adsbygoogle,
+.google-auto-placed {
+  display: none !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
