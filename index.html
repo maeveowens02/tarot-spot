@@ -15,7 +15,6 @@
       <p class="tagline">Draw a card. Receive a whisper of guidance.</p>
     </header>
 
-    <!-- NAVIGATION -->
     <nav class="nav-bar">
       <button class="nav-btn" data-page="tarot">Daily Draw</button>
       <button class="nav-btn" data-page="dictionary">Card Meanings</button>
@@ -23,11 +22,8 @@
       <button class="nav-btn" data-page="about">About</button>
     </nav>
 
-
-    <!-- PAGE WRAPPER -->
     <div class="page-wrapper">
 
-      <!-- DAILY DRAW PAGE -->
       <main id="tarot">
         <div class="reverse-toggle">
           <label class="switch">
@@ -57,82 +53,61 @@
         </section>
       </main>
 
+      <section id="dictionary" class="hidden">
+        <div class="info-box">
+          <h2>Major Arcana Dictionary</h2>
+          <p class="desc">A reference for reflection, insight, and self-awareness.</p>
 
-      <!-- SUPPORT PAGE -->
+          <div class="dictionary-container" id="dictionary-container"></div>
+        </div>
+      </section>
+
       <section id="resources" class="hidden">
         <div class="info-box">
           <h2>Support & Crisis Resources</h2>
-          <p class="desc">You matter. If you are in danger, overwhelmed, or struggling, reach out. Help is available.</p>
+          <p class="desc">You matter...</p>
 
           <div class="resource-list">
             <h3>Immediate Crisis Hotlines</h3>
             <ul>
-              <li><strong>988 Suicide & Crisis Lifeline (US):</strong> Call or text 988</li>
-              <li><strong>Crisis Text Line (US):</strong> Text HOME to 741741</li>
-              <li><strong>Trevor Project:</strong> Text START to 678-678</li>
-              <li><strong>Veterans Crisis Line:</strong> Dial 988 then press 1</li>
+              <li><strong>988:</strong> Call or text</li>
+              <li><strong>Crisis Text Line:</strong> HOME → 741741</li>
+              <li><strong>Trevor Project:</strong> START → 678-678</li>
+              <li><strong>Veterans:</strong> Dial 988, then 1</li>
             </ul>
 
             <h3>International</h3>
             <p>
-              Find your country’s hotline list:
-              <a href="https://www.opencounseling.com/suicide-hotlines" target="_blank">OpenCounseling Hotlines Directory</a>
+              <a href="https://www.opencounseling.com/suicide-hotlines" target="_blank">
+                OpenCounseling Hotlines Directory
+              </a>
             </p>
 
             <h3>Non-Crisis Support</h3>
             <ul>
-              <li><strong>NAMI HelpLine:</strong> 1-800-950-NAMI (6264)</li>
-              <li><strong>SAMHSA Mental Health Treatment:</strong> 1-800-662-HELP</li>
+              <li>NAMI Helpline: 1-800-950-NAMI</li>
+              <li>SAMHSA: 1-800-662-HELP</li>
               <li><a href="https://www.psychologytoday.com" target="_blank">Find a Therapist</a></li>
             </ul>
           </div>
         </div>
       </section>
 
-
-      <!-- ABOUT PAGE -->
       <section id="about" class="hidden">
         <div class="info-box">
           <h2>About the Creator</h2>
-          <p class="desc">
-            I designed this project with the intent to combine my love for tarot and the importance of self-care.
-          </p>
-
-          <p class="desc">
-            Tarot can be a mirror, not a map. The goal here is self-connection, affirmation, softness, and honesty.
-          </p>
-
-          <p class="desc">
-            I believe in self love, the power of the universe, and the power of technology.  
-            If this project helped you slow down, breathe, or understand yourself even a little more, then it already served its purpose.
-          </p>
-
-          <p class="desc">You are always loved and welcome here.</p>
+          <p class="desc">I designed this project...</p>
+          <p class="desc">Tarot can be a mirror...</p>
         </div>
       </section>
 
-
-
-      <!-- DICTIONARY PAGE -->
-      <section id="dictionary" class="hidden">
-        <div class="info-box">
-          <h2>Major Arcana Dictionary</h2>
-          <p class="desc">A reference for reflection, insight, and self-awareness.</p>
-
-          <div class="dictionary-container" id="dictionary-container">
-            <!-- Filled by JS -->
-          </div>
-        </div>
-      </section>
-
-    </div> <!-- END PAGE WRAPPER -->
-
+    </div>
 
     <footer>
-      <p>For reflection only, not a substitute for professional mental health care.</p>
+      <p>For reflection only...</p>
     </footer>
 
-  </div> <!-- END PAGE -->
+  </div>
 
   <script src="script.js"></script>
 </body>
