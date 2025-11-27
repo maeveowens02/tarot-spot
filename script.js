@@ -626,16 +626,23 @@ function generateDictionary() {
       <h4>Upright Affirmations</h4>
       <ul>${card.upright.affirmations.map(a => `<li>${a}</li>`).join("")}</ul>
 
+      <h4>Upright Self-Care</h4>
+      <p>${card.upright.selfCare}</p>
+
       <h4>Reversed Meaning</h4>
       <p>${card.reversed.meaning}</p>
 
       <h4>Reversed Affirmations</h4>
       <ul>${card.reversed.affirmations.map(a => `<li>${a}</li>`).join("")}</ul>
+
+      <h4>Reversed Self-Care</h4>
+      <p>${card.reversed.selfCare}</p>
     `;
 
     container.appendChild(block);
   });
 }
+
 
 // --- PAGE NAVIGATION ---
 const navButtons = document.querySelectorAll(".nav-btn");
