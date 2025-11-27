@@ -109,6 +109,13 @@ function generateDictionary() {
     container.appendChild(block);
   });
 }
+// Make sure privacy page always scrolls to the top
+document.addEventListener("DOMContentLoaded", () => {
+  const privacySection = document.getElementById("privacy");
+  if (privacySection) {
+    privacySection.scrollTop = 0;
+  }
+});
 
 // COOKIE POPUP
 document.addEventListener("DOMContentLoaded", () => {

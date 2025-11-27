@@ -320,3 +320,22 @@ footer {
 .cookie-btn.accept:hover {
   background: rgba(180,154,114,0.4);
 }
+/* -------------------------------
+   PRIVACY PAGE — BLOCK ADS CLEANLY
+--------------------------------*/
+
+#privacy .no-ads-here {
+  padding-top: 1.5rem;
+  position: relative;
+  z-index: 3;
+}
+
+/* Hide any auto-placed AdSense blocks on this page */
+#privacy ins.adsbygoogle,
+#privacy iframe[src*="ads"],
+#privacy .adsbygoogle {
+  display: none !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
