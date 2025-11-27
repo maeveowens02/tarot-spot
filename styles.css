@@ -17,7 +17,7 @@ body {
   justify-content: center;
 }
 
-/* Page container */
+/* Page wrapper */
 .page {
   width: 100%;
   max-width: 900px;
@@ -36,37 +36,36 @@ header h1 {
   font-family: 'Cinzel Decorative', serif;
   font-size: 2.8rem;
   color: #f0e6d2;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-shadow: 0 0 14px rgba(255,240,220,0.25);
 }
 
 .tagline {
-  color: #c3b8a5;
   margin-top: 0.5rem;
+  color: #c3b8a5;
   font-style: italic;
-  font-size: 1.05rem;
 }
 
 
 /* ----------------------------------------------
-   NAVIGATION — horizontal tabs
+   NAV BAR
 ------------------------------------------------*/
 .nav-bar {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 2.2rem;
+  margin-bottom: 2rem;
 }
 
 .nav-btn {
-  padding: 0.55rem 1.4rem;
+  padding: 0.6rem 1.4rem;
   background: rgba(22,18,26,0.65);
   border: 1px solid #b49a72;
   color: #e7dcc9;
   border-radius: 14px;
-  font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.07em;
+  font-size: 0.85rem;
   cursor: pointer;
   transition: 0.25s ease;
 }
@@ -85,17 +84,17 @@ header h1 {
 
 
 /* ----------------------------------------------
-   PAGE WRAPPER — all pages share this frame
+   PAGE WRAPPER
 ------------------------------------------------*/
 .page-wrapper {
   display: flex;
-  flex-direction: column;
   gap: 2rem;
+  flex-direction: column;
 }
 
 
 /* ----------------------------------------------
-   SECTION / PANEL STYLE
+   CONTENT PANELS
 ------------------------------------------------*/
 main,
 section {
@@ -108,24 +107,20 @@ section {
     0 0 18px rgba(180,154,114,0.2);
 }
 
-/* Hide inactive pages */
 .hidden {
   display: none !important;
 }
 
-/* Section titles */
 main h2,
 section h2 {
   font-family: 'Cinzel Decorative', serif;
-  font-size: 1.9rem;
-  color: #f4ecdd;
   text-align: center;
   margin-bottom: 1.4rem;
+  color: #f4ecdd;
 }
 
-
 /* ----------------------------------------------
-   DAILY DRAW — toggle + button
+   DAILY DRAW
 ------------------------------------------------*/
 .reverse-toggle {
   display: flex;
@@ -135,13 +130,6 @@ section h2 {
   margin-bottom: 1rem;
 }
 
-.reverse-text {
-  font-size: 0.9rem;
-  color: #d5c7b0;
-  letter-spacing: 0.06em;
-}
-
-/* switch style */
 .switch {
   position: relative;
   width: 46px;
@@ -158,8 +146,8 @@ section h2 {
   position: absolute;
   cursor: pointer;
   background-color: #6d5a4d;
-  top: 0; left: 0; right: 0; bottom: 0;
   border-radius: 34px;
+  inset: 0;
   transition: .3s;
 }
 
@@ -185,15 +173,13 @@ input:checked + .slider::before {
 
 #draw-button {
   display: block;
-  margin: 0 auto 1.75rem;
-  padding: 0.8rem 1.75rem;
-  border-radius: 999px;
+  margin: 0 auto 1.5rem;
+  padding: 0.8rem 1.8rem;
   background: transparent;
   border: 1px solid #f0e6d2;
   color: #f0e6d2;
+  border-radius: 999px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 1rem;
   cursor: pointer;
   transition: 0.2s;
 }
@@ -201,83 +187,30 @@ input:checked + .slider::before {
 #draw-button:hover {
   transform: translateY(-2px);
   background: rgba(240,230,210,0.06);
-  box-shadow: 0 0 18px rgba(240,230,210,0.35);
 }
 
-
-/* ----------------------------------------------
-   CARD RESULT PANEL
-------------------------------------------------*/
-#card-display {
-  display: flex;
-  justify-content: center;
-}
-
+/* Daily draw card */
 .card-frame {
   border: 1px solid #b49a72;
   border-radius: 16px;
   padding: 1.5rem;
+  max-width: 400px;
+  margin: 0 auto;
   background: radial-gradient(circle at top, #1b1620 0%, #0a070d 55%, #000000 100%);
   box-shadow: 0 0 35px rgba(0,0,0,0.9), 0 0 24px rgba(180,154,114,0.3);
-  position: relative;
-  width: 100%;
-  max-width: 380px;
-}
-
-.card-frame::before,
-.card-frame::after {
-  content: "";
-  position: absolute;
-  width: 36px;
-  height: 36px;
-  border: 1px solid #b49a72;
-}
-
-.card-frame::before {
-  top: 8px;
-  left: 8px;
-  border-right: none;
-  border-bottom: none;
-}
-
-.card-frame::after {
-  bottom: 8px;
-  right: 8px;
-  border-left: none;
-  border-top: none;
-}
-
-#card-name {
-  font-family: 'Cinzel Decorative', serif;
-  text-align: center;
-  margin-bottom: 0.25rem;
-  font-size: 1.55rem;
 }
 
 .card-keyword {
   text-align: center;
-  font-size: 0.95rem;
-  margin-bottom: 1.3rem;
-  letter-spacing: 0.08em;
+  margin-bottom: 1.4rem;
   color: #d1c6b0;
   text-transform: uppercase;
-}
-
-.card-section h3 {
-  font-size: 1rem;
-  margin-bottom: 0.4rem;
-  letter-spacing: 0.15em;
-  color: #e7dbc6;
-  text-transform: uppercase;
-}
-
-.card-section p {
-  line-height: 1.55;
+  font-size: 0.95rem;
 }
 
 
 /* ----------------------------------------------
-   DICTIONARY GRID (sexy version)
+   DICTIONARY GRID
 ------------------------------------------------*/
 .dictionary-container {
   margin-top: 1.5rem;
@@ -300,49 +233,13 @@ input:checked + .slider::before {
   font-family: 'Cinzel Decorative', serif;
   color: #f2e9d7;
   margin-bottom: 0.4rem;
-  font-size: 1.2rem;
-}
-
-.card-meaning .keywords {
-  color: #c9bca3;
-  font-size: 0.85rem;
-  margin-bottom: 0.6rem;
 }
 
 .card-meaning h4 {
+  text-transform: uppercase;
   font-size: 0.88rem;
   color: #dfd3c0;
   margin-top: 0.55rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.card-meaning p {
-  color: #f4f1ea;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-
-/* ----------------------------------------------
-   RESOURCES / ABOUT
-------------------------------------------------*/
-.info-box p {
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  color: #eae3d6;
-}
-
-.resource-list ul {
-  margin-left: 1rem;
-  line-height: 1.6;
-}
-
-.resource-list h3 {
-  margin-top: 1.4rem;
-  text-transform: uppercase;
-  color: #d1c1a7;
-  font-size: 1rem;
 }
 
 
@@ -350,8 +247,8 @@ input:checked + .slider::before {
    FOOTER
 ------------------------------------------------*/
 footer {
-  text-align: center;
   margin-top: 2rem;
+  text-align: center;
   font-size: 0.75rem;
   color: #8e8474;
 }
