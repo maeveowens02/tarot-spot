@@ -1,0 +1,357 @@
+/* ----------------------------------------------
+   GLOBAL
+------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background: radial-gradient(circle at top, #15151f 0%, #05050a 45%, #000000 100%);
+  color: #f4f1ea;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Page container */
+.page {
+  width: 100%;
+  max-width: 900px;
+}
+
+
+/* ----------------------------------------------
+   HEADER
+------------------------------------------------*/
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2.8rem;
+  color: #f0e6d2;
+  letter-spacing: 0.12em;
+  text-shadow: 0 0 14px rgba(255,240,220,0.25);
+}
+
+.tagline {
+  color: #c3b8a5;
+  margin-top: 0.5rem;
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+
+/* ----------------------------------------------
+   NAVIGATION — horizontal tabs
+------------------------------------------------*/
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.2rem;
+}
+
+.nav-btn {
+  padding: 0.55rem 1.4rem;
+  background: rgba(22,18,26,0.65);
+  border: 1px solid #b49a72;
+  color: #e7dcc9;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(180,154,114,0.18);
+  box-shadow: 0 0 12px rgba(180,154,114,0.35);
+  transform: translateY(-2px);
+}
+
+.nav-btn.active {
+  background: rgba(180,154,114,0.32);
+  border-color: #e8dbc1;
+  box-shadow: 0 0 18px rgba(230,212,185,0.45);
+}
+
+
+/* ----------------------------------------------
+   PAGE WRAPPER — all pages share this frame
+------------------------------------------------*/
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+
+/* ----------------------------------------------
+   SECTION / PANEL STYLE
+------------------------------------------------*/
+main,
+section {
+  border: 1px solid rgba(180,154,114,0.4);
+  background: rgba(20,15,26,0.55);
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow:
+    0 0 35px rgba(0,0,0,0.75),
+    0 0 18px rgba(180,154,114,0.2);
+}
+
+/* Hide inactive pages */
+.hidden {
+  display: none !important;
+}
+
+/* Section titles */
+main h2,
+section h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.9rem;
+  color: #f4ecdd;
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+
+
+/* ----------------------------------------------
+   DAILY DRAW — toggle + button
+------------------------------------------------*/
+.reverse-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.reverse-text {
+  font-size: 0.9rem;
+  color: #d5c7b0;
+  letter-spacing: 0.06em;
+}
+
+/* switch style */
+.switch {
+  position: relative;
+  width: 46px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #6d5a4d;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 34px;
+  transition: .3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background: #f4f1ea;
+  border-radius: 50%;
+  transition: .3s;
+}
+
+input:checked + .slider {
+  background: #b49a72;
+}
+
+input:checked + .slider::before {
+  transform: translateX(22px);
+}
+
+#draw-button {
+  display: block;
+  margin: 0 auto 1.75rem;
+  padding: 0.8rem 1.75rem;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid #f0e6d2;
+  color: #f0e6d2;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#draw-button:hover {
+  transform: translateY(-2px);
+  background: rgba(240,230,210,0.06);
+  box-shadow: 0 0 18px rgba(240,230,210,0.35);
+}
+
+
+/* ----------------------------------------------
+   CARD RESULT PANEL
+------------------------------------------------*/
+#card-display {
+  display: flex;
+  justify-content: center;
+}
+
+.card-frame {
+  border: 1px solid #b49a72;
+  border-radius: 16px;
+  padding: 1.5rem;
+  background: radial-gradient(circle at top, #1b1620 0%, #0a070d 55%, #000000 100%);
+  box-shadow: 0 0 35px rgba(0,0,0,0.9), 0 0 24px rgba(180,154,114,0.3);
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+}
+
+.card-frame::before,
+.card-frame::after {
+  content: "";
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #b49a72;
+}
+
+.card-frame::before {
+  top: 8px;
+  left: 8px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.card-frame::after {
+  bottom: 8px;
+  right: 8px;
+  border-left: none;
+  border-top: none;
+}
+
+#card-name {
+  font-family: 'Cinzel Decorative', serif;
+  text-align: center;
+  margin-bottom: 0.25rem;
+  font-size: 1.55rem;
+}
+
+.card-keyword {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 1.3rem;
+  letter-spacing: 0.08em;
+  color: #d1c6b0;
+  text-transform: uppercase;
+}
+
+.card-section h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.15em;
+  color: #e7dbc6;
+  text-transform: uppercase;
+}
+
+.card-section p {
+  line-height: 1.55;
+}
+
+
+/* ----------------------------------------------
+   DICTIONARY GRID (sexy version)
+------------------------------------------------*/
+.dictionary-container {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.3rem;
+}
+
+.card-meaning {
+  padding: 1rem;
+  border: 1px solid #b49a72;
+  border-radius: 14px;
+  background: rgba(15, 11, 18, 0.65);
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 0 18px rgba(0,0,0,0.45);
+}
+
+.card-meaning h3 {
+  font-family: 'Cinzel Decorative', serif;
+  color: #f2e9d7;
+  margin-bottom: 0.4rem;
+  font-size: 1.2rem;
+}
+
+.card-meaning .keywords {
+  color: #c9bca3;
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
+}
+
+.card-meaning h4 {
+  font-size: 0.88rem;
+  color: #dfd3c0;
+  margin-top: 0.55rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.card-meaning p {
+  color: #f4f1ea;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+
+/* ----------------------------------------------
+   RESOURCES / ABOUT
+------------------------------------------------*/
+.info-box p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #eae3d6;
+}
+
+.resource-list ul {
+  margin-left: 1rem;
+  line-height: 1.6;
+}
+
+.resource-list h3 {
+  margin-top: 1.4rem;
+  text-transform: uppercase;
+  color: #d1c1a7;
+  font-size: 1rem;
+}
+
+
+/* ----------------------------------------------
+   FOOTER
+------------------------------------------------*/
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  color: #8e8474;
+}
