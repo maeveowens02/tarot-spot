@@ -340,22 +340,23 @@ footer {
   pointer-events: none !important;
 }
 /* ----------------------------------------------
-   BLOCK ALL TOP ADS FROM PUSHING CONTENT DOWN
+   GOOGLE AUTO-ADS BLOCKER — PREVENT CONTENT LOSS
 ------------------------------------------------*/
 
-ins.adsbygoogle {
+ins.adsbygoogle,
+.adsbygoogle,
+iframe[src*="ads"],
+iframe[id*="google_ads"],
+.google-auto-placed {
   display: none !important;
   height: 0 !important;
   opacity: 0 !important;
   pointer-events: none !important;
 }
 
-iframe[src*="ads"],
-iframe[id*="google_ads"],
-.adsbygoogle,
-.google-auto-placed {
-  display: none !important;
-  height: 0 !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
+/* Privacy Page: ensure text is ABOVE any injected elements */
+#privacy .no-ads-here {
+  padding-top: 1.5rem;
+  position: relative;
+  z-index: 10;
 }
