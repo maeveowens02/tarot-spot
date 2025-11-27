@@ -360,3 +360,23 @@ iframe[id*="google_ads"],
   position: relative;
   z-index: 10;
 }
+/* Prevent Google Auto Ads from hijacking content layout */
+main ins.adsbygoogle,
+section ins.adsbygoogle,
+main .adsbygoogle,
+section .adsbygoogle,
+main iframe[src*="ads"],
+section iframe[src*="ads"],
+main iframe[id*="google_ads"],
+section iframe[id*="google_ads"],
+.google-auto-placed,
+#tarot ins.adsbygoogle,
+#dictionary ins.adsbygoogle,
+#resources ins.adsbygoogle,
+#about ins.adsbygoogle,
+#privacy ins.adsbygoogle {
+  display: none !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
