@@ -380,3 +380,7 @@ section iframe[id*="google_ads"],
   opacity: 0 !important;
   pointer-events: none !important;
 }
+/* Add padding-top to push content into view even if ad tries to inject */
+main, section {
+  padding-top: 2.8rem;
+}
