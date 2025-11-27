@@ -569,16 +569,23 @@ function generateDictionary() {
       <h3>${card.name}</h3>
       <p class="keywords">${card.keyword}</p>
 
-      <h4>Upright</h4>
-      <p>${card.upright.meaning || card.upright.affirmation}</p>
+      <h4>Upright Meaning</h4>
+      <p>${card.upright.meaning}</p>
 
-      <h4>Reversed</h4>
-      <p>${card.reversed.meaning || card.reversed.affirmation}</p>
+      <h4>Upright Affirmations</h4>
+      <ul>${card.upright.affirmations.map(a => `<li>${a}</li>`).join("")}</ul>
+
+      <h4>Reversed Meaning</h4>
+      <p>${card.reversed.meaning}</p>
+
+      <h4>Reversed Affirmations</h4>
+      <ul>${card.reversed.affirmations.map(a => `<li>${a}</li>`).join("")}</ul>
     `;
 
     container.appendChild(block);
   });
 }
+
 // --- PAGE NAVIGATION ---
 const navButtons = document.querySelectorAll(".nav-btn");
 const sections = {
