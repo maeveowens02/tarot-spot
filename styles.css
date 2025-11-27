@@ -252,3 +252,71 @@ footer {
   font-size: 0.75rem;
   color: #8e8474;
 }
+/* ----------------------------------------------
+   COOKIE POPUP
+------------------------------------------------*/
+
+.cookie-popup {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 500px;
+  width: 90%;
+  background: rgba(15, 11, 18, 0.9);
+  border: 1px solid #b49a72;
+  border-radius: 14px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 0 25px rgba(0,0,0,0.7);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.cookie-popup.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cookie-box p {
+  color: #e7dcc9;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.cookie-link {
+  color: #d1b388;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cookie-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.cookie-btn {
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #b49a72;
+  cursor: pointer;
+  background: transparent;
+  color: #e7dcc9;
+  transition: 0.25s;
+  font-size: 0.85rem;
+}
+
+.cookie-btn:hover {
+  background: rgba(180,154,114,0.2);
+  box-shadow: 0 0 10px rgba(180,154,114,0.4);
+}
+
+.cookie-btn.accept {
+  background: rgba(180,154,114,0.25);
+}
+
+.cookie-btn.accept:hover {
+  background: rgba(180,154,114,0.4);
+}

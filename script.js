@@ -671,3 +671,35 @@ navButtons.forEach(btn => {
   });
 });
 
+// ----------------------------------------------
+// COOKIE CONSENT POPUP LOGIC
+// ----------------------------------------------
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cookiePopup = document.getElementById("cookie-popup");
+  const acceptBtn = document.getElementById("cookie-accept");
+  const learnBtn = document.getElementById("cookie-learn");
+
+  // Show popup if not accepted yet
+  if (!localStorage.getItem("cookieConsent")) {
+    cookiePopup.classList.remove("hidden");
+    setTimeout(() => {
+      cookiePopup.classList.add("show");
+    }, 200);
+  }
+
+  // Accept cookies
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("cookieConsent", "true");
+    cookiePopup.classList.remove("show");
+    setTimeout(() => {
+      cookiePopup.classList.add("hidden");
+    }, 400);
+  });
+
+  // Learn more opens Privacy Policy page
+  learnBtn.addEventListener("click", () => {
+    // Navigate using your existing page navigation function
+    switchPage("privacy");
+  });
+});
