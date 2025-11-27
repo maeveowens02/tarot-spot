@@ -510,13 +510,14 @@ function drawRandomCard() {
 
   const meaning = reversed ? baseCard.reversed : baseCard.upright;
 
-  const card = {
-    name: baseCard.name,
-    keyword: baseCard.keyword,
-    orientation: reversed ? "Reversed" : "Upright",
-    affirmation: meaning.affirmation,
-    selfCare: meaning.selfCare
-  };
+ const card = {
+  name: baseCard.name,
+  keyword: baseCard.keyword,
+  orientation: reversed ? "Reversed" : "Upright",
+  affirmation: meaning.affirmations[0],  
+  selfCare: meaning.meaning 
+};
+
 
   return card;
 }
