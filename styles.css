@@ -95,9 +95,11 @@ header h1 {
   }
 
   .nav-bar {
-    flex-direction: column;
-    gap: 0.5rem;
-    display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  display: flex;
+}
+
   }
 
   .nav-bar.open {
@@ -108,7 +110,7 @@ header h1 {
     width: 100%;
     text-align: center;
   }
-}
+
 
 
 .nav-btn {
