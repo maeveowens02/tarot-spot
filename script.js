@@ -664,6 +664,15 @@ function switchPage(pageName) {
 
 // NAV BUTTON LISTENERS
 navButtons.forEach(btn => {
+  const navToggle = document.getElementById("nav-toggle");
+const navBar = document.querySelector(".nav-bar");
+
+if (navToggle && navBar) {
+  navToggle.addEventListener("click", () => {
+    navBar.classList.toggle("open");
+  });
+}
+
   btn.addEventListener("click", () => {
     navButtons.forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
@@ -780,6 +789,18 @@ document.addEventListener("DOMContentLoaded", () => {
   if (privacySection) {
     privacySection.scrollTop = 0;
   }
+});
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  if (!loader) return;
+
+  // fade out
+  loader.classList.add("fade-out");
+
+  // fully remove after transition
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 600);
 });
 
 // COOKIE POPUP

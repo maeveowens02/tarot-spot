@@ -14,6 +14,12 @@
 </head>
 
 <body>
+  <div id="loader">
+  <div class="loader-card">
+    <span class="loader-mono">MO</span>
+  </div>
+</div>
+
   <div class="page">
 
     <header>
@@ -21,13 +27,23 @@
       <p class="tagline">Draw a card. Receive guidance.</p>
     </header>
 
-    <nav class="nav-bar">
-      <button class="nav-btn" data-page="tarot">Daily Draw</button>
-      <button class="nav-btn" data-page="dictionary">Card Meanings</button>
-      <button class="nav-btn" data-page="resources">Support & Crisis</button>
-      <button class="nav-btn" data-page="about">About</button>
-      <button class="nav-btn" data-page="privacy">Privacy Policy</button>
-    </nav>
+  <nav class="nav-bar-wrapper">
+
+  <button class="nav-toggle" id="nav-toggle">
+    ☰
+  </button>
+
+  <div class="nav-bar">
+    <button class="nav-btn" data-page="tarot">Daily Draw</button>
+    <button class="nav-btn" data-page="dictionary">Card Meanings</button>
+    <button class="nav-btn" data-page="resources">Support & Crisis</button>
+    <button class="nav-btn" data-page="about">About</button>
+    <button class="nav-btn" data-page="privacy">Privacy Policy</button>
+  </div>
+
+</nav>
+
+
 
     <div class="page-wrapper">
 
@@ -152,9 +168,13 @@
 
     </div>
 
-    <footer>
-      <p>For reflection only — not a substitute for professional care.</p>
-    </footer>
+   <footer>
+  <div class="footer-line">
+    <div class="footer-card">MO</div>
+  </div>
+  <p>For reflection only — not a substitute for professional care.</p>
+</footer>
+
 
     <!-- COOKIE POPUP -->
     <div id="cookie-popup" class="cookie-popup hidden">
