@@ -675,6 +675,8 @@ navButtons.forEach(btn => {
 const drawButton = document.getElementById("draw-button");
 const cardDisplay = document.getElementById("card-display");
 const reverseCheckbox = document.getElementById("reverse-checkbox");
+reverseCheckbox.checked = false;
+
 
 const cardName = document.getElementById("card-name");
 const cardKeyword = document.getElementById("card-keyword");
