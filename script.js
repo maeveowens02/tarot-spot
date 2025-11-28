@@ -673,7 +673,6 @@ navButtons.forEach(btn => {
 
 // DAILY DRAW
 const drawButton = document.getElementById("draw-button");
-console.log("actual checkbox state:", reverseCheckbox.checked);
 const cardDisplay = document.getElementById("card-display");
 const reverseCheckbox = document.getElementById("reverse-checkbox");
 reverseCheckbox.checked = false;
