@@ -684,16 +684,18 @@ const cardAffirmation = document.getElementById("card-affirmation");
 const cardSelfCare = document.getElementById("card-selfcare");
 
 function drawRandomCard() {
-let reversed = false;
+  let reversed = false;
 
-if (reverseCheckbox.checked) {
-  reversed = Math.random() < 0.5;
-}
+  if (reverseCheckbox.checked === true) {
+    reversed = Math.random() < 0.5;
+  }
+
+  console.log("Final reversed?", reversed);
 
   const idx = Math.floor(Math.random() * majorArcana.length);
-
   const baseCard = majorArcana[idx];
   const meaning = reversed ? baseCard.reversed : baseCard.upright;
+
 
   const randomAff = meaning.affirmations[
     Math.floor(Math.random() * meaning.affirmations.length)
