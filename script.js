@@ -682,7 +682,7 @@ const cardAffirmation = document.getElementById("card-affirmation");
 const cardSelfCare = document.getElementById("card-selfcare");
 
 function drawRandomCard() {
-  const reversed = reverseCheckbox.checked;
+ const reversed = reverseCheckbox.checked ? Math.random() < 0.5 : false;
   const idx = Math.floor(Math.random() * majorArcana.length);
 
   const baseCard = majorArcana[idx];
