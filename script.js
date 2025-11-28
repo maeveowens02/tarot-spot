@@ -717,8 +717,18 @@ function showCard(card) {
   cardKeyword.textContent = card.keyword;
   cardAffirmation.textContent = card.affirmation;
   cardSelfCare.textContent = card.selfCare;
+
+  const frame = document.querySelector(".card-frame");
+
+  if (card.orientation === "Reversed") {
+    frame.classList.add("reversed-glow");
+  } else {
+    frame.classList.remove("reversed-glow");
+  }
+
   cardDisplay.classList.remove("hidden");
 }
+
 
 drawButton.addEventListener("click", () => {
   const card = drawRandomCard();
