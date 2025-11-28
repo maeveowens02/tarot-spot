@@ -678,6 +678,7 @@ const reverseCheckbox = document.getElementById("reverse-checkbox");
 reverseCheckbox.checked = false;
 
 
+
 const cardName = document.getElementById("card-name");
 const cardKeyword = document.getElementById("card-keyword");
 const cardAffirmation = document.getElementById("card-affirmation");
@@ -731,9 +732,12 @@ function showCard(card) {
 
 
 drawButton.addEventListener("click", () => {
+  console.log("Toggle state:", reverseCheckbox.checked);
+
   const card = drawRandomCard();
   showCard(card);
 });
+
 
 // DICTIONARY BUILDER
 function generateDictionary() {
