@@ -138,9 +138,14 @@ section h2 {
 
 .switch input {
   opacity: 0;
-  width: 0;
-  height: 0;
+  width: 46px;
+  height: 24px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
 }
+
 
 .slider {
   position: absolute;
