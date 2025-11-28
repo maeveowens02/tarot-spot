@@ -75,6 +75,12 @@ header h1 {
   justify-content: center;
   gap: 1rem;
 }
+/* FORCE HIDE NAV TOGGLE ON DESKTOP */
+@media (min-width: 641px) {
+  .nav-toggle {
+    display: none !important;
+  }
+}
 
 /* Mobile */
 @media (max-width: 640px) {
