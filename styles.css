@@ -646,3 +646,6 @@ body.mood-page {
     margin-bottom: 20px;
 }
 
+header {
+  margin-bottom: 0.8rem !important;
+}
