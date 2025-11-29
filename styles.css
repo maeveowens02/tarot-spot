@@ -710,3 +710,14 @@ iframe[id*="google_ads"],
     box-shadow: 0 0 12px rgba(217,192,140,0.4);
     transform: translateY(-2px);
 }
+header {
+    margin-bottom: 0.2rem !important;
+}
+
+.tagline {
+    margin-bottom: 0.1rem !important;
+}
+
+.dual-buttons {
+    margin-top: -10px !important;
+}
