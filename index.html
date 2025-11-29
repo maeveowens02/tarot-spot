@@ -34,26 +34,30 @@
 
     <div class="page-wrapper">
 
-        <!-- DAILY DRAW SECTION -->
         <section id="daily-draw">
-            <h2>Daily Card Pull</h2>
+    <h2>Daily Card Pull</h2>
 
-            <div class="reverse-toggle">
-                <span>Allow reversals?</span>
-                <label class="switch">
-                    <input type="checkbox" id="reverse-toggle-checkbox">
-                    <span class="slider"></span>
-                </label>
-            </div>
+    <div class="reverse-toggle">
+        <span>Allow reversals?</span>
+        <label class="switch">
+            <input type="checkbox" id="reverse-toggle-checkbox">
+            <span class="slider"></span>
+        </label>
+    </div>
 
-            <button id="draw-button">Draw a Card</button>
+    <button id="draw-button">Draw a Card</button>
 
-            <div class="card-frame">
-                <div class="tarot-card back">TAROT</div>
-                <h3 id="card-name" class="hidden"></h3>
-<p id="card-keyword" class="keyword hidden"></p>
-<p id="card-affirmation" class="affirmation hidden"></p>
-<p id="card-selfcare" class="selfcare hidden"></p>
+    <!-- CARD FRAME (card ONLY goes here) -->
+    <div class="card-frame">
+        <div class="tarot-card back">TAROT</div>
+    </div>
+
+    <!-- CARD INFO (outside the frame — correct placement!) -->
+    <h3 id="card-name" class="hidden card-output"></h3>
+    <p id="card-keyword" class="keyword hidden card-output"></p>
+    <p id="card-affirmation" class="affirmation hidden card-output"></p>
+    <p id="card-selfcare" class="selfcare hidden card-output"></p>
+</section>
 
             </div>
 
@@ -73,34 +77,28 @@
         <!-- ABOUT SECTION -->
         <section id="about" class="hidden">
 
-            <h2>About Me</h2>
+           <section id="about" class="hidden">
+    <h2>About Me</h2>
 
-            <div class="info-box">
+    <div class="info-box">
+        <img src="IMG_2875.jpg" class="profile-img" alt="Photo">
 
-                <img src="YOURIMAGE.jpg" class="profile-img" alt="Your Photo">
-<div class="info-box">
-          <h2>About the Creator</h2>
-
-
-          <p class="desc">
-
-
-            <img src="IMG_2875.jpg" class="profile-img">
+        <p class="desc">
             I created this project to blend my love for tarot and technology with self care and love.
-</p>
-          <p class="desc">
-            Tarot is a mirror, it helps us understand our emotions, patterns, and possibilities.
-          </p>
+        </p>
 
+        <p class="desc">
+            Tarot is a mirror. It helps us understand our emotions, patterns, and possibilities.
+        </p>
 
-          <p class="desc">
+        <p class="desc">
             My intention is to create a comforting space where you can meet yourself with honesty, softness, and curiosity.
-          </p>
+        </p>
 
+        <p class="desc">You are always loved and welcome here.</p>
+    </div>
+</section>
 
-          <p class="desc">You are always loved and welcome here.</p>
-        </div>
-      </section>
 
 
        
