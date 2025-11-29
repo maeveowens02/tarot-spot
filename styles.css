@@ -764,6 +764,18 @@ header {
     50% { transform: translateY(-6px); }
     100% { transform: translateY(0); }
 }
-.centered-section {
+
+#about .info-box {
     text-align: center !important;
+}
+
+#about .desc {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+#about img.profile-img {
+    display: block;
+    margin: 0 auto 1rem auto;
 }
