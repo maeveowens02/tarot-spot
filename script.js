@@ -714,7 +714,10 @@ function drawRandomCard() {
 
 function showCard(card) {
     // Show card title inside the glowing card frame
-    cardDiv.textContent = card.name.toUpperCase();
+    cardName.textContent = `${card.name} (${card.orientation})`;
+cardKeyword.textContent = card.keyword;
+cardAffirmation.textContent = card.affirmation;
+cardSelfCare.textContent = card.selfCare;
 
     // Update text below the card
     cardName.textContent = `${card.name} (${card.orientation})`;

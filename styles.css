@@ -794,4 +794,21 @@ header {
         0 0 20px rgba(255,120,120,0.55),
         0 0 35px rgba(255,60,60,0.40) !important;
 }
+#card-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    text-align: center;
+    padding: 1.2rem;
+}
+#card-box h3 {
+    font-family: "Cinzel Decorative", serif;
+    font-size: 1.3rem;
+    color: #f4ecdd;
+}
+#card-box p {
+    font-size: 0.95rem;
+    color: #d8c7a3;
+    line-height: 1.4;
+}
 
