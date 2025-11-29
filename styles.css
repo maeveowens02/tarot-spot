@@ -839,3 +839,16 @@ header {
     }
 }
 
+.nav-bar-wrapper,
+.nav-bar,
+.nav-btn {
+    position: relative;
+    z-index: 9999 !important;
+}
+
+
+@media (max-width: 640px) {
+    .dual-buttons {
+        margin-top: 1rem !important;
+    }
+}
