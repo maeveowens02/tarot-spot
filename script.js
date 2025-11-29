@@ -28,6 +28,7 @@ const majorArcana = [
     }
   },
 
+
   {
     name: "The Magician",
     keyword: "Capability · Intention · Personal power",
@@ -56,6 +57,7 @@ const majorArcana = [
       shadowWork: "Where am I using distraction or self-sabotage to avoid facing something vulnerable?"
     }
   },
+
 
   {
     name: "The High Priestess",
@@ -86,6 +88,7 @@ const majorArcana = [
     }
   },
 
+
   {
     name: "The Empress",
     keyword: "Nurturing · Comfort · Receiving",
@@ -114,6 +117,7 @@ const majorArcana = [
       shadowWork: "How much of my worth have I tied to being needed, productive, or constantly available?"
     }
   },
+
 
   {
     name: "The Emperor",
@@ -144,6 +148,7 @@ const majorArcana = [
     }
   },
 
+
   {
     name: "The Hierophant",
     keyword: "Tradition · Guidance · Beliefs",
@@ -172,6 +177,7 @@ const majorArcana = [
       shadowWork: "Where do I stay small or compliant to be seen as ‘good’ or ‘acceptable’?"
     }
   },
+
 
   {
     name: "The Lovers",
@@ -202,6 +208,7 @@ const majorArcana = [
     }
   },
 
+
   {
     name: "The Chariot",
     keyword: "Momentum · Determination · Direction",
@@ -230,6 +237,7 @@ const majorArcana = [
       shadowWork: "Where do I stay in motion just to avoid feeling my exhaustion, grief, or confusion?"
     }
   },
+
 
   {
     name: "Strength",
@@ -260,6 +268,7 @@ const majorArcana = [
     }
   },
 
+
   {
     name: "The Hermit",
     keyword: "Solitude · Reflection · Inner guidance",
@@ -288,6 +297,7 @@ const majorArcana = [
       shadowWork: "Where have I convinced myself I’m a burden so I don’t risk letting anyone closer?"
     }
   },
+
 
   {
     name: "Wheel of Fortune",
@@ -318,6 +328,7 @@ const majorArcana = [
     }
   },
 
+
   {
     name: "Justice",
     keyword: "Honesty · Accountability · Balance",
@@ -346,6 +357,7 @@ const majorArcana = [
       shadowWork: "Where do I keep quiet about injustice—toward myself or others—because I’m afraid of conflict?"
     }
   },
+
 
   {
     name: "The Hanged Man",
@@ -376,6 +388,7 @@ const majorArcana = [
     }
   },
 
+
   {
     name: "Death",
     keyword: "Endings · Transformation · Renewal",
@@ -404,6 +417,7 @@ const majorArcana = [
       shadowWork: "Where am I blocking my own transformation by insisting everything must stay the same?"
     }
   },
+
 
   {
     name: "Temperance",
@@ -434,6 +448,7 @@ const majorArcana = [
     }
   },
 
+
   {
     name: "The Devil",
     keyword: "Patterns · Attachment · Coping",
@@ -462,6 +477,7 @@ const majorArcana = [
       shadowWork: "When I imagine letting go of this pattern or person, what emotions come up, and how can I support myself through them?"
     }
   },
+
 
   {
     name: "The Tower",
@@ -492,6 +508,7 @@ const majorArcana = [
     }
   },
 
+
   {
     name: "The Star",
     keyword: "Hope · Healing · Gentle renewal",
@@ -520,6 +537,7 @@ const majorArcana = [
       shadowWork: "When did I first learn that hoping was unsafe, and what might it look like to slowly try again?"
     }
   },
+
 
   {
     name: "The Moon",
@@ -550,6 +568,7 @@ const majorArcana = [
     }
   },
 
+
   {
     name: "The Sun",
     keyword: "Joy · Clarity · Warmth",
@@ -578,6 +597,7 @@ const majorArcana = [
       shadowWork: "What beliefs keep me from letting myself feel proud, happy, or relieved?"
     }
   },
+
 
   {
     name: "Judgement",
@@ -608,6 +628,7 @@ const majorArcana = [
     }
   },
 
+
   {
     name: "The World",
     keyword: "Completion · Integration · Wholeness",
@@ -637,89 +658,58 @@ const majorArcana = [
     }
   }
 ];
-
-
-
-// NAVIGATION
 const navButtons = document.querySelectorAll(".nav-btn");
 
 const sections = {
-  tarot: document.querySelector("#tarot"),
-  dictionary: document.querySelector("#dictionary"),
-  resources: document.getElementById("resources"),
+  "daily-draw": document.getElementById("daily-draw"),
+  dictionary: document.getElementById("dictionary"),
   about: document.getElementById("about"),
-  privacy: document.getElementById("privacy")
+  support: document.getElementById("support"),
 };
 
-function switchPage(pageName) {
-  Object.values(sections).forEach(section => {
-    section.classList.add("hidden");
-  });
-  sections[pageName].classList.remove("hidden");
+function switchPage(target) {
+  Object.values(sections).forEach(sec => sec.classList.add("hidden"));
+  sections[target].classList.remove("hidden");
 
-  if (pageName === "dictionary") {
-    generateDictionary();
-  }
+  if (target === "dictionary") generateDictionary();
 }
 
-// NAV BUTTON LISTENERS
 navButtons.forEach(btn => {
-  const navToggle = document.getElementById("nav-toggle");
-const navBar = document.querySelector(".nav-bar");
-
-if (navToggle && navBar) {
-  navToggle.addEventListener("click", () => {
-    navBar.classList.toggle("open");
-  });
-}
-
   btn.addEventListener("click", () => {
     navButtons.forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
-    switchPage(btn.dataset.page);
+    switchPage(btn.dataset.target);
   });
 });
 
-// DAILY DRAW
+/* -------------------------
+   DAILY DRAW FUNCTIONALITY
+------------------------- */
 const drawButton = document.getElementById("draw-button");
-const cardDisplay = document.getElementById("card-display");
-const reverseCheckbox = document.getElementById("reverse-checkbox");
-reverseCheckbox.checked = false;
+const reverseCheckbox = document.getElementById("reverse-toggle-checkbox");
 
-
-
+const cardDiv = document.querySelector(".tarot-card");
 const cardName = document.getElementById("card-name");
 const cardKeyword = document.getElementById("card-keyword");
 const cardAffirmation = document.getElementById("card-affirmation");
 const cardSelfCare = document.getElementById("card-selfcare");
 
 function drawRandomCard() {
-  let reversed = false;
-
-  if (reverseCheckbox.checked === true) {
-    reversed = Math.random() < 0.5;
-  }
-
-  console.log("Final reversed?", reversed);
-
+  const reversed = reverseCheckbox.checked ? Math.random() < 0.5 : false;
   const idx = Math.floor(Math.random() * majorArcana.length);
-  const baseCard = majorArcana[idx];
-  const meaning = reversed ? baseCard.reversed : baseCard.upright;
+  const base = majorArcana[idx];
+  const info = reversed ? base.reversed : base.upright;
 
+  const randomAff =
+    info.affirmations[Math.floor(Math.random() * info.affirmations.length)];
 
-  const randomAff = meaning.affirmations[
-    Math.floor(Math.random() * meaning.affirmations.length)
-  ];
-
-  const card = {
-    name: baseCard.name,
-    keyword: baseCard.keyword,
+  return {
+    name: base.name,
+    keyword: base.keyword,
     orientation: reversed ? "Reversed" : "Upright",
+    selfCare: info.selfCare,
     affirmation: randomAff,
-    selfCare: meaning.selfCare
   };
-
-  return card;
 }
 
 function showCard(card) {
@@ -728,27 +718,26 @@ function showCard(card) {
   cardAffirmation.textContent = card.affirmation;
   cardSelfCare.textContent = card.selfCare;
 
- const cardDiv = document.querySelector(".tarot-card");
+  // reset visual state
+  cardDiv.classList.remove("reversed");
+  cardDiv.parentElement.classList.remove("reversed-glow");
 
-if (card.orientation === "Reversed") {
+  if (card.orientation === "Reversed") {
     cardDiv.classList.add("reversed");
     cardDiv.parentElement.classList.add("reversed-glow");
-} else {
-    cardDiv.classList.remove("reversed");
-    cardDiv.parentElement.classList.remove("reversed-glow");
+  }
 }
 
 drawButton.addEventListener("click", () => {
-  console.log("Toggle state:", reverseCheckbox.checked);
-
   const card = drawRandomCard();
   showCard(card);
 });
 
-
-// DICTIONARY BUILDER
+/* -------------------------
+   DICTIONARY GENERATOR
+------------------------- */
 function generateDictionary() {
-  const container = document.getElementById("dictionary-container");
+  const container = document.querySelector(".dictionary-container");
   container.innerHTML = "";
 
   majorArcana.forEach(card => {
@@ -763,7 +752,9 @@ function generateDictionary() {
       <p>${card.upright.meaning}</p>
 
       <h4>Upright Affirmations</h4>
-      <ul>${card.upright.affirmations.map(a => `<li>${a}</li>`).join("")}</ul>
+      <ul>${card.upright.affirmations
+        .map(a => `<li>${a}</li>`)
+        .join("")}</ul>
 
       <h4>Upright Self-Care</h4>
       <p>${card.upright.selfCare}</p>
@@ -772,7 +763,9 @@ function generateDictionary() {
       <p>${card.reversed.meaning}</p>
 
       <h4>Reversed Affirmations</h4>
-      <ul>${card.reversed.affirmations.map(a => `<li>${a}</li>`).join("")}</ul>
+      <ul>${card.reversed.affirmations
+        .map(a => `<li>${a}</li>`)
+        .join("")}</ul>
 
       <h4>Reversed Self-Care</h4>
       <p>${card.reversed.selfCare}</p>
@@ -781,49 +774,31 @@ function generateDictionary() {
     container.appendChild(block);
   });
 }
-// Make sure privacy page always scrolls to the top
-document.addEventListener("DOMContentLoaded", () => {
-  const privacySection = document.getElementById("privacy");
-  if (privacySection) {
-    privacySection.scrollTop = 0;
-  }
-});
+
+/* -------------------------
+   LOADER & COOKIE POPUP
+------------------------- */
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
   if (!loader) return;
-
-  // fade out
   loader.classList.add("fade-out");
-
-  // fully remove after transition
-  setTimeout(() => {
-    loader.style.display = "none";
-  }, 600);
+  setTimeout(() => (loader.style.display = "none"), 600);
 });
 
-// COOKIE POPUP
 document.addEventListener("DOMContentLoaded", () => {
   const cookiePopup = document.getElementById("cookie-popup");
-  const acceptBtn = document.getElementById("cookie-accept");
-  const learnBtn = document.getElementById("cookie-learn");
+  const cookieAccept = document.getElementById("cookie-accept");
 
-  if (!localStorage.getItem("cookieConsent")) {
-    cookiePopup.classList.remove("hidden");
-    setTimeout(() => {
+  if (cookiePopup && cookieAccept) {
+    if (!localStorage.getItem("cookieConsent")) {
+      cookiePopup.classList.remove("hidden");
       cookiePopup.classList.add("show");
-    }, 150);
+    }
+
+    cookieAccept.addEventListener("click", () => {
+      localStorage.setItem("cookieConsent", "true");
+      cookiePopup.classList.remove("show");
+      setTimeout(() => cookiePopup.classList.add("hidden"), 300);
+    });
   }
-
-  acceptBtn.addEventListener("click", () => {
-    localStorage.setItem("cookieConsent", "true");
-    cookiePopup.classList.remove("show");
-    setTimeout(() => {
-      cookiePopup.classList.add("hidden");
-    }, 350);
-  });
-
-  learnBtn.addEventListener("click", () => {
-    switchPage("privacy");
-  });
 });
-}
