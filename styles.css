@@ -664,7 +664,7 @@ iframe[id*="google_ads"],
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: -5px !important;
 }
 
 .oracle-btn, .energy-btn {
