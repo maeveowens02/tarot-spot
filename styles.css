@@ -722,8 +722,12 @@ header {
     margin-top: -10px !important;
 }
 .page-wrapper .dual-buttons {
-    margin-top: -18px !important;
-    margin-bottom: -6px !important;
+    margin-top: -12px !important;
+    margin-bottom: 0 !important;
+}
+
+.tagline {
+    margin-bottom: 0.8rem !important;
 }
 
 
