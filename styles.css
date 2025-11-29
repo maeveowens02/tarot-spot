@@ -686,3 +686,25 @@ iframe[id*="google_ads"],
     transform: translateY(-2px);
 }
 
+.back-btn-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.back-btn {
+    padding: 10px 20px;
+    border: 1px solid #d9c08c;
+    color: #d9c08c;
+    background: transparent;
+    border-radius: 12px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(217,192,140,0.12);
+    box-shadow: 0 0 12px rgba(217,192,140,0.4);
+    transform: translateY(-2px);
+}
