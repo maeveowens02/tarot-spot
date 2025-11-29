@@ -97,11 +97,9 @@ header h1 {
   .nav-bar {
     flex-direction: column;
     gap: 0.5rem;
-    display: none;
-  flex-direction: column;
-  gap: 0.5rem;
-  display: flex;
+    display: flex;
 }
+
 
   }
 
@@ -614,14 +612,38 @@ body.mood-page {
     justify-content: center;
 }
 
+/* Make mood page wrapper match main site panels */
 .energy-wrapper {
-    max-width: 850px; /* give it more width */
-    width: 100%;
+    max-width: 850px;
     margin: 40px auto 70px;
-    padding: 40px; /* more inner breathing room */
+    padding: 2rem;
+    border-radius: 18px;
+    background: rgba(20,15,26,0.55);
+    border: 1px solid rgba(180,154,114,0.4);
+    box-shadow:
+        0 0 35px rgba(0,0,0,0.75),
+        0 0 18px rgba(180,154,114,0.2);
 }
+
 .energy-wrapper > div,
 .energy-wrapper > h3 {
     margin-top: 40px !important;
+}
+#result-box,
+.tarot-card-box,
+.affirm-box,
+.self-box,
+.journal-box,
+.summary-box {
+    background: rgba(20,15,26,0.55);
+    border: 1px solid rgba(180,154,114,0.4);
+    box-shadow:
+        0 0 20px rgba(0,0,0,0.6),
+        0 0 15px rgba(180,154,114,0.25);
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
