@@ -3,42 +3,62 @@
 <head>
     <title>Mystics of Mood</title>
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
-
-    <!-- Since mood.html is NOW in the root folder, use the main stylesheet directly -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<div class="energy-wrapper">
+<div class="page">
 
-    <h4>Let’s get in tune with ourselves</h4>
+    <!-- OPTIONAL: Match your site header -->
+    <header>
+        <h1>Mystics of Mood</h1>
+        <p class="tagline">Oracle Edition</p>
+    </header>
 
-    <h3>Mystics of Mood — Oracle Edition</h3>
+    <div class="page-wrapper">
 
-    <p>
-        Select the mood that matches your energy or your daily drawing.  
-        You’ll receive an oracle card, an affirmation, and a self-care ritual.
-    </p>
-</div>
+        <section>
 
-<!-- Mood Buttons -->
-<div class="mood-buttons">
-    <button type="button" data-mood="Calm">Calm</button>
-    <button type="button" data-mood="Happy">Happy</button>
-    <button type="button" data-mood="Stressed">Stressed</button>
-    <button type="button" data-mood="Mad">Mad</button>
-    <button type="button" data-mood="Sad">Sad</button>
-</div>
+            <div class="energy-wrapper">
 
-<!-- Oracle Result -->
-<div id="result-box"></div>
+                <h4>Let’s get in tune with ourselves</h4>
 
-<button id="reset-btn">Reset</button>
+                <h3>Mystics of Mood — Oracle Edition</h3>
 
-<div class="divider">⋆ ✧ ⋆</div>
+                <p>
+                    Select the mood that matches your energy or your daily drawing.  
+                    You’ll receive an oracle card, an affirmation, and a self-care ritual.
+                </p>
+            </div>
 
-<!-- Mood Oracle JS (also in root) -->
+            <!-- Mood Buttons -->
+            <div class="mood-buttons">
+                <button type="button" data-mood="Calm">Calm</button>
+                <button type="button" data-mood="Happy">Happy</button>
+                <button type="button" data-mood="Stressed">Stressed</button>
+                <button type="button" data-mood="Mad">Mad</button>
+                <button type="button" data-mood="Sad">Sad</button>
+            </div>
+
+            <!-- Oracle Result -->
+            <div id="result-box"></div>
+
+            <button id="reset-btn">Reset</button>
+
+            <div class="divider">⋆ ✧ ⋆</div>
+
+        </section>
+
+    </div> <!-- end page-wrapper -->
+
+    <footer>
+        <div class="footer-line"></div>
+        <p>Made by Maeve Owens ✦</p>
+    </footer>
+
+</div> <!-- end page -->
+
 <script src="m.script.js"></script>
 
 </body>
