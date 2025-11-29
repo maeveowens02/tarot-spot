@@ -713,31 +713,32 @@ function drawRandomCard() {
 }
 
 function showCard(card) {
-    // Update card text inside the glowing frame
+    // Show card title inside the glowing card frame
     cardDiv.textContent = card.name.toUpperCase();
 
-    // Update meaning text
+    // Update text below the card
     cardName.textContent = `${card.name} (${card.orientation})`;
     cardKeyword.textContent = card.keyword;
     cardAffirmation.textContent = card.affirmation;
     cardSelfCare.textContent = card.selfCare;
 
-    // Show the info
+    // Reveal text
     cardName.classList.remove("hidden");
     cardKeyword.classList.remove("hidden");
     cardAffirmation.classList.remove("hidden");
     cardSelfCare.classList.remove("hidden");
 
-    // Reset state
+    // Reset card state
     cardDiv.classList.remove("reversed");
     cardDiv.parentElement.classList.remove("reversed-glow");
 
-    // Apply reversed presentation if needed
+    // Handle reversed visuals
     if (card.orientation === "Reversed") {
         cardDiv.classList.add("reversed");
         cardDiv.parentElement.classList.add("reversed-glow");
     }
 }
+
 
 drawButton.addEventListener("click", () => {
   const card = drawRandomCard();
