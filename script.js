@@ -659,7 +659,7 @@ const majorArcana = [
   }
 ];
 // ------------------------------
-// NAVIGATION
+// NAVIGATION (INLINE DISPLAY VERSION)
 // ------------------------------
 const navButtons = document.querySelectorAll(".nav-btn");
 
@@ -670,20 +670,36 @@ const sections = {
   support: document.getElementById("support"),
 };
 
-function switchPage(target) {
-  Object.values(sections).forEach(sec => sec.classList.add("hidden"));
-  sections[target].classList.remove("hidden");
+function showSection(target) {
+  // hide all sections
+  Object.keys(sections).forEach(key => {
+    sections[key].style.display = (key === target) ? "block" : "none";
+  });
 
-  if (target === "dictionary") generateDictionary();
+  // generate dictionary only when needed
+  if (target === "dictionary") {
+    generateDictionary();
+  }
 }
 
+// hook up nav buttons
 navButtons.forEach(btn => {
   btn.addEventListener("click", () => {
+    // active state for buttons
     navButtons.forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
-    switchPage(btn.dataset.target);
+
+    const target = btn.dataset.target;
+    showSection(target);
+
+    // optional: scroll to top on mobile
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
+
+// initial state
+showSection("daily-draw");
+
 
 // ------------------------------
 // DAILY DRAW
