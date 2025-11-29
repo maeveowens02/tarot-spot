@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Energy Dashboard</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Use your site’s CSS -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-btn">← Back to Tarot</a>
+    </nav>
+
+    <div class="info-box">
+        <h2>Daily Energy Dashboard</h2>
+        <h4>A soft spiritual check-in curated just for you</h4>
+        <div class="divider">☽ ✧ ☾</div>
+
+        <!-- 🌙 MOOD ORACLE -->
+        <div class="mood-card">
+            <h3>Your Mood Oracle</h3>
+            <p class="desc">Choose how you're feeling today and receive guidance.</p>
+
+            <div class="mood-buttons">
+                <button type="button">Calm</button>
+                <button type="button">Happy</button>
+                <button type="button">Stressed</button>
+                <button type="button">Mad</button>
+                <button type="button">Sad</button>
+            </div>
+
+            <div id="result-box"></div>
+            <button id="reset-btn">Reset</button>
+        </div>
+
+        <div class="divider">☽ ✧ ☾</div>
+
+        <!-- 🌙 TAROT CARD OF THE DAY -->
+        <h3>Tarot Card of the Day</h3>
+        <div class="tarot-card-box" id="tarot-card-box"></div>
+
+        <div class="divider">☽ ✧ ☾</div>
+
+        <!-- 🌙 AFFIRMATION -->
+        <h3>Affirmation of the Day</h3>
+        <div class="affirm-box" id="affirm-box"></div>
+
+        <div class="divider">☽ ✧ ☾</div>
+
+        <!-- 🌙 SELF CARE -->
+        <h3>Self-Care Prompt</h3>
+        <div class="self-box" id="self-box"></div>
+
+        <div class="divider">☽ ✧ ☾</div>
+
+        <!-- 🌙 JOURNAL PROMPT -->
+        <h3>Journal Prompt</h3>
+        <div class="journal-box" id="journal-box"></div>
+
+        <div class="divider">☽ ✧ ☾</div>
+
+        <!-- 🌙 SUMMARY -->
+        <h3>Energy Summary</h3>
+        <div class="summary-box" id="summary-box"></div>
+
+    </div>
+
+    <!-- Scripts for Mood App + Energy Logic -->
+    <script src="script.js"></script>  
+    <script src="daily-energy.js"></script>
+
+</body>
+</html>

@@ -584,3 +584,22 @@ section iframe[id*="google_ads"],
               0 0 40px rgba(200, 120, 120, 0.35);
   border-color: #d8a0a0 !important;
 }
+.energy-btn {
+    display: inline-block;
+    padding: 14px 26px;
+    border: 1px solid #d9c08c;
+    color: #d9c08c;
+    background: transparent;
+    border-radius: 12px;
+    font-size: 22px;
+    font-family: 'Crimson Text', serif;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.energy-btn:hover {
+    background: rgba(217,192,140,0.1);
+    box-shadow: 0 0 18px rgba(217,192,140,0.4);
+    transform: translateY(-2px);
+}
