@@ -730,4 +730,16 @@ header {
     margin-bottom: 0.8rem !important;
 }
 
+header {
+    padding-bottom: 0 !important;
+    margin-bottom: 0.3rem !important;
+    line-height: 1 !important;
+}
+.tagline {
+    margin-top: 0 !important;
+    margin-bottom: 0.6rem !important;
+}
+.page-wrapper .dual-buttons {
+    margin-top: -6px !important;
+}
 
