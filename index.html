@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maeve’s Tarot Spot</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-
 <div class="page">
 
+    <!-- HEADER -->
     <header>
         <h1>Maeve’s Tarot Spot</h1>
         <p class="tagline">Draw a card. Receive guidance.</p>
@@ -19,19 +19,20 @@
     <!-- NAVIGATION -->
     <div class="nav-bar-wrapper">
         <div class="nav-bar">
-            <button class="nav-btn" data-target="daily-draw">Daily Draw</button>
+            <button class="nav-btn active" data-target="daily-draw">Daily Draw</button>
             <button class="nav-btn" data-target="dictionary">Card Meanings</button>
             <button class="nav-btn" data-target="about">About</button>
             <button class="nav-btn" data-target="support">Support</button>
         </div>
     </div>
 
-    <!-- CALL TO ACTION BUTTONS -->
+    <!-- CTA BUTTONS -->
     <div class="dual-buttons">
         <a href="daily.html" class="energy-btn">Daily Guidance</a>
         <a href="mood.html" class="energy-btn">Mystic of Mood</a>
     </div>
 
+    <!-- MAIN WRAPPER -->
     <div class="page-wrapper">
 
         <!-- DAILY DRAW SECTION -->
@@ -48,40 +49,34 @@
 
             <button id="draw-button">Draw a Card</button>
 
+            <!-- CARD FRAME (card ONLY goes here) -->
             <div class="card-frame">
                 <div class="tarot-card back">TAROT</div>
             </div>
-<div class="card-frame">
-   <div class="tarot-card back">TAROT</div>
-</div>
 
-<h3 id="card-name" class="hidden card-output"></h3>
-<p id="card-keyword" class="hidden card-output"></p>
-<p id="card-affirmation" class="hidden card-output"></p>
-<p id="card-selfcare" class="hidden card-output"></p>
-
-            <!-- Card Output -->
+            <!-- CARD OUTPUT (your JS needs these IDs) -->
             <h3 id="card-name" class="hidden card-output"></h3>
             <p id="card-keyword" class="hidden card-output"></p>
             <p id="card-affirmation" class="hidden card-output"></p>
             <p id="card-selfcare" class="hidden card-output"></p>
+
         </section>
 
-        <!-- DICTIONARY -->
+        <!-- CARD MEANINGS / DICTIONARY -->
         <section id="dictionary" class="hidden">
             <h2>Card Meanings</h2>
             <div class="dictionary-container"></div>
         </section>
 
-        <!-- ABOUT -->
+        <!-- ABOUT SECTION -->
         <section id="about" class="hidden">
             <h2>About Me</h2>
 
             <div class="info-box">
-                <img src="IMG_2875.jpg" class="profile-img" alt="Photo">
+                <img src="IMG_2875.jpg" class="profile-img" alt="Photo" />
 
                 <p class="desc">
-                    I created this project to blend my love for tarot and technology with self care and love.
+                    I created this project to blend my love for tarot and technology with self care and personal reflection.
                 </p>
 
                 <p class="desc">
@@ -96,9 +91,10 @@
             </div>
         </section>
 
-        <!-- SUPPORT -->
+        <!-- SUPPORT SECTION -->
         <section id="support" class="hidden">
             <h2>Support & Hotlines</h2>
+
             <p class="desc">You matter.</p>
 
             <h3>Immediate Hotlines (US)</h3>
@@ -109,16 +105,16 @@
             </ul>
         </section>
 
-    </div> <!-- end page wrapper -->
+    </div> <!-- END WRAPPER -->
 
+    <!-- FOOTER -->
     <footer>
         <div class="footer-line"></div>
         <p>Made with love ✦ Maeve Owens</p>
     </footer>
 
-</div>
+</div> <!-- END PAGE -->
 
 <script src="script.js"></script>
-
 </body>
 </html>
