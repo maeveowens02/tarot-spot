@@ -585,7 +585,7 @@ section iframe[id*="google_ads"],
 .daily-btn {
   display: inline-block;
   padding: 12px 24px;
-  background: #000;
+  background: transparent;
   color: #eafa5a;
   text-decoration: none;
   border-radius: 8px;
