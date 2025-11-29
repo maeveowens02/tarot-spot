@@ -779,7 +779,8 @@ header {
     display: block;
     margin: 0 auto 1rem auto;
 }
-.tarot-card.reversed {
+
+.card-frame.reversed-glow {
     box-shadow:
         0 0 18px rgba(255, 120, 120, 0.45),
         0 0 32px rgba(255, 60, 60, 0.35),
