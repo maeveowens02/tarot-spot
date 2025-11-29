@@ -586,7 +586,7 @@ section iframe[id*="google_ads"],
   display: inline-block;
   padding: 12px 24px;
   background: #000;
-  color: #ffd700;
+  color: #eafa5a;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
@@ -601,7 +601,7 @@ section iframe[id*="google_ads"],
 .center {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 /* FIX CRAMPED MOOD PAGE LAYOUT */
 body.mood-page {
