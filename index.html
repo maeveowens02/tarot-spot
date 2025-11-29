@@ -1,153 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maeve's Tarot Spot</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <title>Arcana of the Self</title>
+  <link rel="stylesheet" href="styles.css">
 
-  <body>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@300;500;700&display=swap" rel="stylesheet">
 
-    <!-- 🌙 NAVIGATION -->
-    <nav class="navbar">
-      <button class="nav-btn" data-page="tarot">Daily Draw</button>
-      <button class="nav-btn" data-page="dictionary">Card Meanings</button>
-      <button class="nav-btn" data-page="resources">Support & Crisis</button>
-      <button class="nav-btn" data-page="about">About</button>
-      <button class="nav-btn" data-page="privacy">Privacy Policy</button>
-      <button class="nav-btn" data-page="energy">Daily Energy</button>
-    </nav>
+  <!-- GOOGLE ADSENSE (VALID & FIXED) -->
+  <script async 
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8512638260389366"
+    crossorigin="anonymous"></script>
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 
-    <!-- ===================================================== -->
-    <!-- 🌙 PAGE: DAILY DRAW (your homepage tarot draw) -->
-    <!-- ===================================================== -->
-    <main id="tarot">
-      <div class="info-box">
-        <h2>Daily Tarot Draw</h2>
-        <p class="desc">Pull a card and receive a messaget.</p>
-        <canvas id="cardCanvas" width="350" height="560"></canvas>
-        <button class="draw-btn" id="draw-card">Draw Card</button>
-        <p id="card-meaning"></p>
-      </div>
-    </main>
 
-    <!-- ===================================================== -->
-    <!-- 🌙 PAGE: DICTIONARY -->
-    <!-- ===================================================== -->
-    <section id="dictionary" class="hidden">
-      <div class="info-box">
-        <h2>Card Meanings</h2>
-        <p class="desc">Search for any tarot card to learn its meaning.</p>
-        <input type="text" id="search-bar" placeholder="Search cards..." />
-        <div id="card-meanings"></div>
-      </div>
-    </section>
+</head>
 
-    <!-- ===================================================== -->
-    <!-- 🌙 PAGE: SUPPORT & CRISIS -->
-    <!-- ===================================================== -->
-    <section id="resources" class="hidden">
-      <div class="info-box">
-        <h2>Support & Crisis Resources</h2>
-        <p class="desc">You are not alone — here is immediate help.</p>
-        <ul class="resource-list">
-          <li>Suicide Hotline (USA): 988</li>
-          <li>Crisis Text Line: Text HOME to 741741</li>
-          <li>Trevor Project (LGBTQ+ youth): 1-866-488-7386</li>
-        </ul>
-      </div>
-    </section>
+<body>
+  <div id="loader">
+  <div class="loader-card">
+    <span class="loader-mono">MO</span>
+  </div>
+</div>
 
-    <!-- ===================================================== -->
-    <!-- 🌙 PAGE: ABOUT -->
-    <!-- ===================================================== -->
-    <section id="about" class="hidden">
-      <div class="info-box">
-        <h2>About This Website</h2>
-        <p class="desc">
-          Crafted with intention, care, and a touch of magic by Eve.
-        </p>
-      </div>
-    </section>
+  <div class="page">
 
-    <!-- ===================================================== -->
-    <!-- 🌙 PAGE: PRIVACY POLICY -->
-    <!-- ===================================================== -->
-    <section id="privacy" class="hidden">
-      <div class="info-box">
-        <h2>Privacy Policy</h2>
-        <p class="desc">We value your privacy and your energy.</p>
-      </div>
-    </section>
+    <header>
+      <h1>Arcana of the Self</h1>
+      <p class="tagline">Draw a card. Receive guidance.</p>
+    </header>
+<nav>
+  <nav class="nav-bar-wrapper">
 
-    <!-- ===================================================== -->
-    <!-- 🌙 PAGE: DAILY ENERGY DASHBOARD (NEW PAGE) -->
-    <!-- ===================================================== -->
-    <section id="energy" class="hidden">
-      <div class="info-box">
+  <div class="nav-bar">
+    <button class="nav-btn" data-page="tarot">Daily Draw</button>
+<button class="nav-btn" data-page="dictionary">Card Meanings</button>
+<button class="nav-btn" data-page="resources">Support & Crisis</button>
+<button class="nav-btn" data-page="about">About</button>
+<button class="nav-btn" data-page="privacy">Privacy Policy</button>
+<button class="nav-btn" data-page="energy">Daily Energy</button>
 
-        <h2>Daily Energy Dashboard</h2>
-        <h4>A soft spiritual check-in curated just for you</h4>
-        <div class="divider">☽ ✧ ☾</div>
+  </div>
 
-        <!-- 🌙 MOOD ORACLE -->
-        <div class="mood-card">
-          <h3>Your Mood Oracle</h3>
-          <p class="desc">Choose how you feel and receive a message.</p>
+</div>
 
-          <div class="mood-buttons">
-            <button type="button">Calm</button>
-            <button type="button">Happy</button>
-            <button type="button">Stressed</button>
-            <button type="button">Mad</button>
-            <button type="button">Sad</button>
-          </div>
+</nav>
 
-          <div id="result-box"></div>
-          <button id="reset-btn">Reset</button>
+
+
+    <div class="page-wrapper">
+
+      <!-- DAILY DRAW -->
+      <main id="tarot">
+        <section id="energy" class="hidden">
+   <div class="info-box">
+      <h2>Daily Energy Dashboard</h2>
+      <p class="desc">A soft spiritual check-in curated just for you.</p>
+
+      <!-- insert Mood Oracle code here -->
+      <!-- insert Tarot Card of Day -->
+      <!-- insert Affirmation of Day -->
+      <!-- insert Self-Care Prompt -->
+      <!-- insert Journal Prompt -->
+      <!-- insert Energy Summary -->
+   </div>
+</section>
+<div class="mood-card">
+   <div class="mood-buttons">
+      <button type="button">Calm</button>
+      <button type="button">Happy</button>
+      <button type="button">Stressed</button>
+      <button type="button">Angry</button>
+      <button type="button">Sad</button>
+   </div>
+
+   <div id="result-box"></div>
+
+   <button id="reset-btn">Reset</button>
+</div>
+<div class="tarot-card-box" id="tarot-card-box"></div>
+<div class="affirm-box" id="affirm-box"></div>
+<div class="self-box" id="self-box"></div>
+<div class="journal-box" id="journal-box"></div>
+<div class="summary-box" id="summary-box"></div>
+
+        <div class="reverse-toggle">
+          <label class="switch">
+            <input type="checkbox" id="reverse-checkbox">
+            <span class="slider"></span>
+          </label>
+          <span class="reverse-text">Draw Reversed?</span>
         </div>
 
-        <div class="divider">☽ ✧ ☾</div>
+        <button id="draw-button">Draw a Card</button>
 
-        <!-- 🌙 TAROT CARD OF THE DAY -->
-        <div class="tarot-card-box" id="tarot-card-box"></div>
+        <section id="card-display" class="hidden">
+          <div class="card-frame">
+            <h2 id="card-name"></h2>
+            <p id="card-keyword" class="card-keyword"></p>
 
-        <div class="divider">☽ ✧ ☾</div>
+            <div class="card-section">
+              <h3>Affirmation</h3>
+              <p id="card-affirmation"></p>
+            </div>
 
-        <!-- 🌙 AFFIRMATION OF THE DAY -->
-        <h3>Affirmation of the Day</h3>
-        <div class="affirm-box" id="affirm-box"></div>
+            <div class="card-section">
+              <h3>Self-Care Rite</h3>
+              <p id="card-selfcare"></p>
+            </div>
+          </div>
+        </section>
+      </main>
 
-        <div class="divider">☽ ✧ ☾</div>
+      <!-- DICTIONARY -->
+      <section id="dictionary" class="hidden">
+        <div class="info-box">
+          <h2>Major Arcana Dictionary</h2>
+          <p class="desc">A reference for reflection, insight, and self-awareness.</p>
+          <div class="dictionary-container" id="dictionary-container"></div>
+        </div>
+      </section>
 
-        <!-- 🌙 SELF-CARE PROMPT -->
-        <h3>Self-Care Prompt</h3>
-        <div class="self-box" id="self-box"></div>
+      <!-- SUPPORT -->
+      <section id="resources" class="hidden">
+        <div class="info-box">
+          <h2>Support & Crisis Resources</h2>
+          <p class="desc">You matter.
+          <h3>Immediate Hotlines (US)</h3>
+          <ul>
+            <li><strong>988 Suicide & Crisis Lifeline:</strong> Call or text 988</li>
+            <li><strong>Crisis Text Line:</strong> Text HOME to 741741</li>
+            <li><strong>Trevor Project:</strong> Text START to 678-678</li>
+            <li><strong>Veterans Crisis Line:</strong> Call 988, then press 1</li>
+          </ul>
 
-        <div class="divider">☽ ✧ ☾</div>
+          <h3>International</h3>
+          <p><a href="https://www.opencounseling.com/suicide-hotlines" target="_blank">OpenCounseling Global Hotline Directory</a></p>
 
-        <!-- 🌙 JOURNAL PROMPT -->
-        <h3>Journal Prompt</h3>
-        <div class="journal-box" id="journal-box"></div>
+          <h3>Non-Crisis Support</h3>
+          <ul>
+            <li>NAMI HelpLine: 1-800-950-NAMI</li>
+            <li>SAMHSA: 1-800-662-HELP</li>
+            <li><a href="https://www.psychologytoday.com" target="_blank">Find a Therapist</a></li>
+          </ul>
+        </div>
+      </section>
 
-        <div class="divider">☽ ✧ ☾</div>
+      <!-- ABOUT -->
+      <section id="about" class="hidden">
+        <div class="info-box">
+          <h2>About the Creator</h2>
 
-        <!-- 🌙 ENERGY SUMMARY -->
-        <h3>Energy Summary</h3>
-        <div class="summary-box" id="summary-box"></div>
+          <p class="desc">
+            I created this project to blend my love for tarot and technology with self care and love.
 
+          <p class="desc">
+            Tarot is a mirror, it helps us understand our emotions, patterns, and possibilities.
+          </p>
+
+          <p class="desc">
+            My intention is to create a comforting space where you can meet yourself with honesty, softness, and curiosity.
+          </p>
+
+          <p class="desc">You are always loved and welcome here.</p>
+        </div>
+      </section>
+
+      <!-- PRIVACY POLICY -->
+      <section id="privacy" class="hidden" data-nosnippet data-ad-format="none">
+        <div class="info-box no-ads-here">
+          <h2>Privacy Policy</h2>
+          <p><em>Last updated: 2025</em></p>
+
+          <p>
+            Maeve’s Tarot Spot (“we,” “us,” “our”) respects your privacy. This page explains how we collect,
+            use, and protect your information.
+          </p>
+
+          <h3>Information We Collect</h3>
+          <p>We do not collect personal data unless you choose to provide it voluntarily.</p>
+
+          <h3>Google AdSense & Cookies</h3>
+          <p>
+            This site uses Google AdSense, which may use cookies to serve personalized ads.  
+            Manage preferences here:
+            <a href="https://www.google.com/settings/ads" target="_blank">Google Ad Settings</a>.
+          </p>
+
+          <h3>Cookies</h3>
+          <p>You may disable cookies in your browser settings at any time.</p>
+
+          <h3>Third-Party Links</h3>
+          <p>External websites linked here have their own privacy policies. We are not responsible for them.</p>
+
+          <h3>Children’s Privacy</h3>
+          <p>This site is not intended for individuals under the age of 13.</p>
+
+          <h3>Contact</h3>
+          <p>Email: <strong>maeves.tarot@gmail.com</strong></p>
+        </div>
+      </section>
+
+    </div>
+
+   <footer>
+  <div class="footer-line">
+    <div class="footer-card">MO</div>
+  </div>
+  <p>For reflection only — not a substitute for professional care.</p>
+</footer>
+
+
+    <!-- COOKIE POPUP -->
+    <div id="cookie-popup" class="cookie-popup hidden">
+      <div class="cookie-box">
+        <p>
+          This site uses cookies (including Google AdSense). Review our 
+          <a href="#" data-page="privacy" class="cookie-link">Privacy Policy</a>.
+        </p>
+
+        <div class="cookie-buttons">
+          <button id="cookie-accept" class="cookie-btn accept">Accept</button>
+          <button id="cookie-learn" class="cookie-btn learn" data-page="privacy">Learn More</button>
+        </div>
       </div>
-    </section>
+    </div>
 
-    <!-- ===================================================== -->
+  </div>
 
-    <script src="script.js"></script>
-    <script src="daily-energy.js"></script>
-  </body>
+  <script src="script.js"></script>
+  <script src="daily-energy.js"></script>
+
+</body>
 </html>
-
