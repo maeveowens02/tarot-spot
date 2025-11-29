@@ -658,6 +658,9 @@ const majorArcana = [
     }
   }
 ];
+// ------------------------------
+// NAVIGATION
+// ------------------------------
 const navButtons = document.querySelectorAll(".nav-btn");
 
 const sections = {
@@ -682,13 +685,13 @@ navButtons.forEach(btn => {
   });
 });
 
-/* -------------------------
-   DAILY DRAW FUNCTIONALITY
-------------------------- */
+// ------------------------------
+// DAILY DRAW
+// ------------------------------
 const drawButton = document.getElementById("draw-button");
 const reverseCheckbox = document.getElementById("reverse-toggle-checkbox");
 
-const cardDiv = document.querySelector(".tarot-card");
+const cardBox = document.getElementById("card-box");
 const cardName = document.getElementById("card-name");
 const cardKeyword = document.getElementById("card-keyword");
 const cardAffirmation = document.getElementById("card-affirmation");
@@ -713,44 +716,37 @@ function drawRandomCard() {
 }
 
 function showCard(card) {
-    // Show card title inside the glowing card frame
-    cardName.textContent = `${card.name} (${card.orientation})`;
-cardKeyword.textContent = card.keyword;
-cardAffirmation.textContent = card.affirmation;
-cardSelfCare.textContent = card.selfCare;
+  // Fill inner elements
+  cardName.textContent = `${card.name} (${card.orientation})`;
+  cardKeyword.textContent = card.keyword;
+  cardAffirmation.textContent = card.affirmation;
+  cardSelfCare.textContent = card.selfCare;
 
-    // Update text below the card
-    cardName.textContent = `${card.name} (${card.orientation})`;
-    cardKeyword.textContent = card.keyword;
-    cardAffirmation.textContent = card.affirmation;
-    cardSelfCare.textContent = card.selfCare;
+  // Reveal text
+  cardName.classList.remove("hidden");
+  cardKeyword.classList.remove("hidden");
+  cardAffirmation.classList.remove("hidden");
+  cardSelfCare.classList.remove("hidden");
 
-    // Reveal text
-    cardName.classList.remove("hidden");
-    cardKeyword.classList.remove("hidden");
-    cardAffirmation.classList.remove("hidden");
-    cardSelfCare.classList.remove("hidden");
+  // Clear reversed styles
+  cardBox.classList.remove("reversed");
+  cardBox.parentElement.classList.remove("reversed-glow");
 
-    // Reset card state
-    cardDiv.classList.remove("reversed");
-    cardDiv.parentElement.classList.remove("reversed-glow");
-
-    // Handle reversed visuals
-    if (card.orientation === "Reversed") {
-        cardDiv.classList.add("reversed");
-        cardDiv.parentElement.classList.add("reversed-glow");
-    }
+  // Add reversed visuals
+  if (card.orientation === "Reversed") {
+    cardBox.classList.add("reversed");
+    cardBox.parentElement.classList.add("reversed-glow");
+  }
 }
-
 
 drawButton.addEventListener("click", () => {
   const card = drawRandomCard();
   showCard(card);
 });
 
-/* -------------------------
-   DICTIONARY GENERATOR
-------------------------- */
+// ------------------------------
+// DICTIONARY
+// ------------------------------
 function generateDictionary() {
   const container = document.querySelector(".dictionary-container");
   container.innerHTML = "";
@@ -789,31 +785,3 @@ function generateDictionary() {
     container.appendChild(block);
   });
 }
-
-/* -------------------------
-   LOADER & COOKIE POPUP
-------------------------- */
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-  if (!loader) return;
-  loader.classList.add("fade-out");
-  setTimeout(() => (loader.style.display = "none"), 600);
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const cookiePopup = document.getElementById("cookie-popup");
-  const cookieAccept = document.getElementById("cookie-accept");
-
-  if (cookiePopup && cookieAccept) {
-    if (!localStorage.getItem("cookieConsent")) {
-      cookiePopup.classList.remove("hidden");
-      cookiePopup.classList.add("show");
-    }
-
-    cookieAccept.addEventListener("click", () => {
-      localStorage.setItem("cookieConsent", "true");
-      cookiePopup.classList.remove("show");
-      setTimeout(() => cookiePopup.classList.add("hidden"), 300);
-    });
-  }
-});

@@ -29,7 +29,7 @@
     <!-- CTA BUTTONS -->
     <div class="dual-buttons">
         <a href="daily.html" class="energy-btn">Daily Guidance</a>
-        <a href="mood.html.html" class="energy-btn">Mystic of Mood</a>
+        <a href="mood.html" class="energy-btn">Mystic of Mood</a>
     </div>
 
     <!-- MAIN WRAPPER -->
@@ -49,31 +49,25 @@
 
             <button id="draw-button">Draw a Card</button>
 
-           <div class="card-frame">
-    <div class="tarot-card" id="card-box">
-        <h3 id="card-name"></h3>
-        <p id="card-keyword"></p>
-        <p id="card-affirmation"></p>
-        <p id="card-selfcare"></p>
-    </div>
-</div>
-
-
-            <!-- CARD OUTPUT (your JS needs these IDs) -->
-            <h3 id="card-name" class="hidden card-output"></h3>
-            <p id="card-keyword" class="hidden card-output"></p>
-            <p id="card-affirmation" class="hidden card-output"></p>
-            <p id="card-selfcare" class="hidden card-output"></p>
+            <!-- FIXED CARD FRAME WITH TEXT INSIDE -->
+            <div class="card-frame">
+                <div class="tarot-card" id="card-box">
+                    <h3 id="card-name" class="hidden"></h3>
+                    <p id="card-keyword" class="hidden"></p>
+                    <p id="card-affirmation" class="hidden"></p>
+                    <p id="card-selfcare" class="hidden"></p>
+                </div>
+            </div>
 
         </section>
 
-        <!-- CARD MEANINGS / DICTIONARY -->
+        <!-- CARD MEANINGS -->
         <section id="dictionary" class="hidden">
             <h2>Card Meanings</h2>
             <div class="dictionary-container"></div>
         </section>
 
-        <!-- ABOUT SECTION -->
+        <!-- ABOUT -->
         <section id="about" class="hidden">
             <h2>About Me</h2>
 
@@ -96,7 +90,7 @@
             </div>
         </section>
 
-        <!-- SUPPORT SECTION -->
+        <!-- SUPPORT -->
         <section id="support" class="hidden">
             <h2>Support & Hotlines</h2>
 
@@ -110,7 +104,7 @@
             </ul>
         </section>
 
-    </div> <!-- END WRAPPER -->
+    </div>
 
     <!-- FOOTER -->
     <footer>
@@ -118,8 +112,9 @@
         <p>Made with love ✦ Maeve Owens</p>
     </footer>
 
-</div> <!-- END PAGE -->
+</div>
 
 <script src="script.js"></script>
 </body>
 </html>
+
