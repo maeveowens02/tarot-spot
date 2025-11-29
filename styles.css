@@ -721,3 +721,7 @@ header {
 .dual-buttons {
     margin-top: -10px !important;
 }
+.page-wrapper .dual-buttons {
+    margin-top: -25px !important;
+    margin-bottom: -10px !important;
+}
