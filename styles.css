@@ -878,3 +878,21 @@ section:not(.hidden) {
         line-height: 1.25rem !important;
     }
 }
+section.hidden {
+    height: 0 !important;
+    max-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+section:not(.hidden) {
+    height: auto !important;
+    max-height: none !important;
+    padding: 2rem !important;
+    margin-bottom: 1.5rem !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
