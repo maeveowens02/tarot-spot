@@ -742,4 +742,11 @@ header {
 .page-wrapper .dual-buttons {
     margin-top: -6px !important;
 }
+.page-wrapper .dual-buttons {
+    margin-top: -10px !important;
+}
+
+.nav-bar-wrapper {
+    margin-top: 6px !important;
+}
 
