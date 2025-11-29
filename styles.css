@@ -620,4 +620,8 @@ body.mood-page {
     margin: 40px auto 70px;
     padding: 40px; /* more inner breathing room */
 }
+.energy-wrapper > div,
+.energy-wrapper > h3 {
+    margin-top: 40px !important;
+}
 
