@@ -584,3 +584,24 @@ section iframe[id*="google_ads"],
               0 0 40px rgba(200, 120, 120, 0.35);
   border-color: #d8a0a0 !important;
 }
+.daily-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #000;
+  color: #ffd700;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  transition: 0.2s ease;
+}
+
+.daily-btn:hover {
+  background: #111;
+  box-shadow: 0 0 10px #ffd700aa;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
