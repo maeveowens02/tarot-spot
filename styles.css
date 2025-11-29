@@ -566,6 +566,15 @@ iframe[id*="google_ads"],
 }
 
 /* Oracle card result */
+
+.energy-wrapper {
+    text-align: center;
+}
+
+#result-box {
+    text-align: left; /* keeps the oracle meaning clean + readable */
+}
+
 #result-box {
     margin: 30px auto;
     padding: 25px;
