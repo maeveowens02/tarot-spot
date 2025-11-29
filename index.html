@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,79 +34,63 @@
 
     <div class="page-wrapper">
 
-       <section id="daily-draw">
-    <h2>Daily Card Pull</h2>
+        <!-- DAILY DRAW SECTION -->
+        <section id="daily-draw">
+            <h2>Daily Card Pull</h2>
 
-    <div class="reverse-toggle">
-        <span>Allow reversals?</span>
-        <label class="switch">
-            <input type="checkbox" id="reverse-toggle-checkbox">
-            <span class="slider"></span>
-        </label>
-    </div>
-
-    <button id="draw-button">Draw a Card</button>
-
-    <!-- CARD DISPLAY -->
-    <div class="card-frame">
-        <div class="tarot-card back">TAROT</div>
-    </div>
-
-    <!-- CARD OUTPUT (THIS IS WHAT YOUR JS NEEDS!) -->
-    <h3 id="card-name" class="hidden card-output"></h3>
-    <p id="card-keyword" class="hidden card-output"></p>
-    <p id="card-affirmation" class="hidden card-output"></p>
-    <p id="card-selfcare" class="hidden card-output"></p>
-</section>
-
-
+            <div class="reverse-toggle">
+                <span>Allow reversals?</span>
+                <label class="switch">
+                    <input type="checkbox" id="reverse-toggle-checkbox">
+                    <span class="slider"></span>
+                </label>
             </div>
 
-            <div class="card-keyword" id="card-keyword"></div>
-            <div id="card-meaning"></div>
+            <button id="draw-button">Draw a Card</button>
+
+            <div class="card-frame">
+                <div class="tarot-card back">TAROT</div>
+            </div>
+
+            <!-- Card Output -->
+            <h3 id="card-name" class="hidden card-output"></h3>
+            <p id="card-keyword" class="hidden card-output"></p>
+            <p id="card-affirmation" class="hidden card-output"></p>
+            <p id="card-selfcare" class="hidden card-output"></p>
         </section>
 
-        <!-- DICTIONARY SECTION -->
+        <!-- DICTIONARY -->
         <section id="dictionary" class="hidden">
             <h2>Card Meanings</h2>
+            <div class="dictionary-container"></div>
+        </section>
 
-            <div class="dictionary-container">
-                <!-- Your card meanings go here -->
+        <!-- ABOUT -->
+        <section id="about" class="hidden">
+            <h2>About Me</h2>
+
+            <div class="info-box">
+                <img src="IMG_2875.jpg" class="profile-img" alt="Photo">
+
+                <p class="desc">
+                    I created this project to blend my love for tarot and technology with self care and love.
+                </p>
+
+                <p class="desc">
+                    Tarot is a mirror. It helps us understand our emotions, patterns, and possibilities.
+                </p>
+
+                <p class="desc">
+                    My intention is to create a comforting space where you can meet yourself with honesty, softness, and curiosity.
+                </p>
+
+                <p class="desc">You are always loved and welcome here.</p>
             </div>
         </section>
 
-        <!-- ABOUT SECTION -->
-        <section id="about" class="hidden">
-
-           <section id="about" class="hidden">
-    <h2>About Me</h2>
-
-    <div class="info-box">
-        <img src="IMG_2875.jpg" class="profile-img" alt="Photo">
-
-        <p class="desc">
-            I created this project to blend my love for tarot and technology with self care and love.
-        </p>
-
-        <p class="desc">
-            Tarot is a mirror. It helps us understand our emotions, patterns, and possibilities.
-        </p>
-
-        <p class="desc">
-            My intention is to create a comforting space where you can meet yourself with honesty, softness, and curiosity.
-        </p>
-
-        <p class="desc">You are always loved and welcome here.</p>
-    </div>
-</section>
-
-
-
-       
-
+        <!-- SUPPORT -->
         <section id="support" class="hidden">
             <h2>Support & Hotlines</h2>
-
             <p class="desc">You matter.</p>
 
             <h3>Immediate Hotlines (US)</h3>
@@ -115,17 +99,16 @@
                 <li>1-800-273-TALK (8255)</li>
                 <li>Crisis Text Line: text HOME to 741741</li>
             </ul>
-
         </section>
 
-    </div> 
+    </div> <!-- end page wrapper -->
 
     <footer>
         <div class="footer-line"></div>
         <p>Made with love ✦ Maeve Owens</p>
     </footer>
 
-</div> 
+</div>
 
 <script src="script.js"></script>
 
