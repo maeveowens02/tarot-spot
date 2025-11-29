@@ -787,4 +787,12 @@ header {
         0 0 45px rgba(255, 0, 0, 0.2);
     transform: rotate(180deg);
 }
+.card-frame.reversed-glow {
+    overflow: visible !important;
+}
+.card-frame.reversed-glow {
+    box-shadow:
+        0 0 20px rgba(255,120,120,0.55),
+        0 0 35px rgba(255,60,60,0.40) !important;
+}
 

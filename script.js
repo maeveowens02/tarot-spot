@@ -728,17 +728,15 @@ function showCard(card) {
   cardAffirmation.textContent = card.affirmation;
   cardSelfCare.textContent = card.selfCare;
 
-  const frame = document.querySelector(".card-frame");
+ const cardDiv = document.querySelector(".tarot-card");
 
-  if (card.orientation === "Reversed") {
-    frame.classList.add("reversed-glow");
-  } else {
-    frame.classList.remove("reversed-glow");
-  }
-
-  cardDisplay.classList.remove("hidden");
+if (card.orientation === "Reversed") {
+    cardDiv.classList.add("reversed");
+    cardDiv.parentElement.classList.add("reversed-glow");
+} else {
+    cardDiv.classList.remove("reversed");
+    cardDiv.parentElement.classList.remove("reversed-glow");
 }
-
 
 drawButton.addEventListener("click", () => {
   console.log("Toggle state:", reverseCheckbox.checked);
@@ -828,3 +826,4 @@ document.addEventListener("DOMContentLoaded", () => {
     switchPage("privacy");
   });
 });
+}
