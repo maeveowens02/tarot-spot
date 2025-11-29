@@ -659,3 +659,29 @@ body.mood-page {
 header {
   margin-bottom: 0.8rem !important;
 }
+.dual-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.oracle-btn, .energy-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 1px solid #d9c08c;
+    color: #d9c08c;
+    background: transparent;
+    border-radius: 12px;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.oracle-btn:hover, .energy-btn:hover {
+    background: rgba(217,192,140,0.12);
+    box-shadow: 0 0 12px rgba(217,192,140,0.4);
+    transform: translateY(-2px);
+}
+
