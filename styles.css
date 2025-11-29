@@ -29,7 +29,7 @@ body {
 ------------------------------------------------*/
 header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem !important;
 }
 
 header h1 {
@@ -599,10 +599,9 @@ section iframe[id*="google_ads"],
   box-shadow: 0 0 10px #ffd700aa;
 }
 .center {
-  display: flex;
-  justify-content: center;
-  margin-top: -10px;
+  margin-top: 5px !important;
 }
+
 /* FIX CRAMPED MOOD PAGE LAYOUT */
 body.mood-page {
     background: radial-gradient(circle at top, #15151f 0%, #05050a 45%, #000000 100%);
