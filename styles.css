@@ -812,6 +812,46 @@ header {
     line-height: 1.4;
 }
 
+/* ============================================================
+   FINAL MOBILE + SAFARI PATCH — CLEAN + SAFE + FULLY WORKING
+   ============================================================ */
+
+/* Force hidden sections to collapse properly (iOS fix) */
+.hidden {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Make visible sections fully visible */
+section:not(.hidden) {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+}
+
+/* Nav buttons: bring to top so taps always register */
+.nav-bar-wrapper,
+.nav-bar,
+.nav-btn {
+    position: relative !important;
+    z-index: 9999 !important;
+}
+
+/* Fix dual buttons overlapping nav on mobile */
+@media (max-width: 640px) {
+    .dual-buttons {
+        margin-top: 1rem !important;
+    }
+}
+
+/* Mobile card display fixes */
 @media (max-width: 600px) {
     body {
         padding: 0.8rem !important;
@@ -824,7 +864,8 @@ header {
 
     #card-box {
         padding: 1rem !important;
-        gap: 0.4rem !important;
+        gap: 0.5rem !important;
+        word-wrap: break-word;
     }
 
     #card-box h3 {
@@ -835,33 +876,5 @@ header {
     #card-box p {
         font-size: 0.9rem !important;
         line-height: 1.25rem !important;
-        word-wrap: break-word;
     }
-}
-
-.nav-bar-wrapper,
-.nav-bar,
-.nav-btn {
-    position: relative;
-    z-index: 9999 !important;
-}
-
-
-@media (max-width: 640px) {
-    .dual-buttons {
-        margin-top: 1rem !important;
-    }
-}
-.hidden {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    overflow: hidden !important;
-}
-section:not(.hidden) {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    height: auto !important;
 }
