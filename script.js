@@ -713,19 +713,30 @@ function drawRandomCard() {
 }
 
 function showCard(card) {
-  cardName.textContent = `${card.name} (${card.orientation})`;
-  cardKeyword.textContent = card.keyword;
-  cardAffirmation.textContent = card.affirmation;
-  cardSelfCare.textContent = card.selfCare;
+    // Update card text inside the glowing frame
+    cardDiv.textContent = card.name.toUpperCase();
 
-  // reset visual state
-  cardDiv.classList.remove("reversed");
-  cardDiv.parentElement.classList.remove("reversed-glow");
+    // Update meaning text
+    cardName.textContent = `${card.name} (${card.orientation})`;
+    cardKeyword.textContent = card.keyword;
+    cardAffirmation.textContent = card.affirmation;
+    cardSelfCare.textContent = card.selfCare;
 
-  if (card.orientation === "Reversed") {
-    cardDiv.classList.add("reversed");
-    cardDiv.parentElement.classList.add("reversed-glow");
-  }
+    // Show the info
+    cardName.classList.remove("hidden");
+    cardKeyword.classList.remove("hidden");
+    cardAffirmation.classList.remove("hidden");
+    cardSelfCare.classList.remove("hidden");
+
+    // Reset state
+    cardDiv.classList.remove("reversed");
+    cardDiv.parentElement.classList.remove("reversed-glow");
+
+    // Apply reversed presentation if needed
+    if (card.orientation === "Reversed") {
+        cardDiv.classList.add("reversed");
+        cardDiv.parentElement.classList.add("reversed-glow");
+    }
 }
 
 drawButton.addEventListener("click", () => {
