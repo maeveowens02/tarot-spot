@@ -788,29 +788,51 @@ function generateDictionary() {
   });
 }
 // ------------------------------
-// SPREADS
+// SPREADS (FIXED VERSION)
 // ------------------------------
 drawButton.addEventListener("click", () => {
     const spread = document.getElementById("spread-select").value;
 
+    // ONE CARD (your original working logic restored)
     if (spread === "one") {
+        // fully reset the card frame content before drawing
+        cardBox.classList.remove("reversed");
+        cardBox.parentElement.classList.remove("reversed-glow");
+
+        cardName.textContent = "";
+        cardKeyword.textContent = "";
+        cardAffirmation.textContent = "";
+        cardSelfCare.textContent = "";
+
+        cardName.classList.add("hidden");
+        cardKeyword.classList.add("hidden");
+        cardAffirmation.classList.add("hidden");
+        cardSelfCare.classList.add("hidden");
+
         const card = drawRandomCard();
         showCard(card);
-    } 
-    
-    else if (spread === "three") {
+        return;
+    }
+
+    // THREE-CARD
+    if (spread === "three") {
         drawThreeCardSpread();
-    } 
-    
-    else if (spread === "celtic") {
+        return;
+    }
+
+    // CELTIC CROSS
+    if (spread === "celtic") {
         drawCelticCrossSpread();
+        return;
     }
 });
-function drawThreeCardSpread() {
-    const container = cardBox.parentElement;
 
-    // Clear previous card info
-    container.innerHTML = "";
+function drawThreeCardSpread() {
+    const container = document.getElementById("multi-spread-container");
+    container.innerHTML = ""; // clear old spread
+
+    // hide one-card display
+    cardBox.parentElement.classList.add("hidden");
 
     const positions = ["Past", "Present", "Future"];
 
@@ -827,24 +849,24 @@ function drawThreeCardSpread() {
             <p>${card.selfCare}</p>
         `;
 
-        if (card.orientation === "Reversed") {
-            cardDiv.classList.add("reversed");
-        }
-
         container.appendChild(cardDiv);
     }
 }
+
 function drawCelticCrossSpread() {
-    const container = cardBox.parentElement;
-    container.innerHTML = "";
+    const container = document.getElementById("multi-spread-container");
+    container.innerHTML = ""; 
+
+    // hide one-card display
+    cardBox.parentElement.classList.add("hidden");
 
     const positions = [
         "1. Present",
         "2. Challenge",
         "3. Past",
         "4. Future",
-        "5. Above / Conscious",
-        "6. Below / Subconscious",
+        "5. Conscious",
+        "6. Subconscious",
         "7. Advice",
         "8. External Influences",
         "9. Hopes & Fears",
@@ -853,21 +875,38 @@ function drawCelticCrossSpread() {
 
     for (let i = 0; i < 10; i++) {
         const card = drawRandomCard();
+        
+        const el = document.createElement("div");
+        el.className = "celtic-card";
 
-        const cardDiv = document.createElement("div");
-        cardDiv.className = "celtic-card";
-
-        cardDiv.innerHTML = `
+        el.innerHTML = `
             <h3>${positions[i]} – ${card.name} (${card.orientation})</h3>
             <p>${card.keyword}</p>
             <p>${card.affirmation}</p>
             <p>${card.selfCare}</p>
         `;
 
-        if (card.orientation === "Reversed") {
-            cardDiv.classList.add("reversed");
-        }
-
-        container.appendChild(cardDiv);
+        container.appendChild(el);
     }
 }
+drawButton.addEventListener("click", () => {
+    const spread = document.getElementById("spread-select").value;
+
+    // Clear previous spread
+    document.getElementById("multi-spread-container").innerHTML = "";
+
+    if (spread === "one") {
+        cardBox.parentElement.classList.remove("hidden");
+        const card = drawRandomCard();
+        showCard(card);
+    }
+
+    if (spread === "three") {
+        drawThreeCardSpread();
+    }
+
+    if (spread === "celtic") {
+        drawCelticCrossSpread();
+    }
+});
+
