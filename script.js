@@ -746,43 +746,57 @@ function showCard(card) {
   }
 }
 
-/* ----------------------------------------------
-   DICTIONARY (UNCHANGED CONTENT)
----------------------------------------------- */
 function generateDictionary() {
   const container = document.querySelector(".dictionary-container");
   container.innerHTML = "";
 
   majorArcana.forEach(card => {
     const block = document.createElement("div");
-    block.classList.add("card-meaning");
+    block.classList.add("dictionary-entry");
+
+    const cleanID = card.name.toLowerCase().replace(/\s+/g, "-");
 
     block.innerHTML = `
-      <h3>${card.name}</h3>
-      <p class="keywords">${card.keyword}</p>
+        <img src="images/${cleanID}.png" 
+             class="dictionary-card-img" 
+             data-target="${cleanID}-details">
 
-      <h4>Upright Meaning</h4>
-      <p>${card.upright.meaning}</p>
+        <div id="${cleanID}-details" class="dictionary-details hidden">
+          <h3>${card.name}</h3>
+          <p class="keywords">${card.keyword}</p>
 
-      <h4>Upright Affirmations</h4>
-      <ul>${card.upright.affirmations.map(a => `<li>${a}</li>`).join("")}</ul>
+          <h4>Upright Meaning</h4>
+          <p>${card.upright.meaning}</p>
 
-      <h4>Upright Self-Care</h4>
-      <p>${card.upright.selfCare}</p>
+          <h4>Upright Affirmations</h4>
+          <ul>${card.upright.affirmations.map(a => `<li>${a}</li>`).join("")}</ul>
 
-      <h4>Reversed Meaning</h4>
-      <p>${card.reversed.meaning}</p>
+          <h4>Upright Self-Care</h4>
+          <p>${card.upright.selfCare}</p>
 
-      <h4>Reversed Affirmations</h4>
-      <ul>${card.reversed.affirmations.map(a => `<li>${a}</li>`).join("")}</ul>
+          <h4>Reversed Meaning</h4>
+          <p>${card.reversed.meaning}</p>
 
-      <h4>Reversed Self-Care</h4>
-      <p>${card.reversed.selfCare}</p>
+          <h4>Reversed Affirmations</h4>
+          <ul>${card.reversed.affirmations.map(a => `<li>${a}</li>`).join("")}</ul>
+
+          <h4>Reversed Self-Care</h4>
+          <p>${card.reversed.selfCare}</p>
+        </div>
     `;
 
     container.appendChild(block);
   });
+
+  // click reveal logic
+  document.querySelectorAll(".dictionary-card-img").forEach(img => {
+    img.addEventListener("click", () => {
+      const target = document.getElementById(img.dataset.target);
+      target.classList.toggle("hidden");
+    });
+  });
 }
+
 
 /* ----------------------------------------------
    SPREAD FUNCTIONS
