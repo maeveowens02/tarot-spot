@@ -658,9 +658,10 @@ const majorArcana = [
     }
   }
 ];
-// ------------------------------
-// NAVIGATION
-// ------------------------------
+
+/* ----------------------------------------------
+   NAVIGATION
+---------------------------------------------- */
 const navButtons = document.querySelectorAll(".nav-btn");
 
 const sections = {
@@ -687,9 +688,9 @@ navButtons.forEach(btn => {
   });
 });
 
-// ------------------------------
-// DAILY DRAW
-// ------------------------------
+/* ----------------------------------------------
+   DAILY DRAW BASE SETUP
+---------------------------------------------- */
 const drawButton = document.getElementById("draw-button");
 const reverseCheckbox = document.getElementById("reverse-toggle-checkbox");
 
@@ -699,6 +700,9 @@ const cardKeyword = document.getElementById("card-keyword");
 const cardAffirmation = document.getElementById("card-affirmation");
 const cardSelfCare = document.getElementById("card-selfcare");
 
+/* ----------------------------------------------
+   RANDOM CARD
+---------------------------------------------- */
 function drawRandomCard() {
   const reversed = reverseCheckbox.checked ? Math.random() < 0.5 : false;
   const idx = Math.floor(Math.random() * majorArcana.length);
@@ -717,20 +721,21 @@ function drawRandomCard() {
   };
 }
 
+/* ----------------------------------------------
+   DISPLAY ONE CARD
+---------------------------------------------- */
 function showCard(card) {
-  // Fill inner elements
   cardName.textContent = `${card.name} (${card.orientation})`;
   cardKeyword.textContent = card.keyword;
   cardAffirmation.textContent = card.affirmation;
   cardSelfCare.textContent = card.selfCare;
 
-  // Reveal text
   cardName.classList.remove("hidden");
   cardKeyword.classList.remove("hidden");
   cardAffirmation.classList.remove("hidden");
   cardSelfCare.classList.remove("hidden");
 
-  // Clear reversed styles
+  // Remove old reversed glow
   cardBox.classList.remove("reversed");
   cardBox.parentElement.classList.remove("reversed-glow");
 
@@ -741,14 +746,9 @@ function showCard(card) {
   }
 }
 
-drawButton.addEventListener("click", () => {
-  const card = drawRandomCard();
-  showCard(card);
-});
-
-// ------------------------------
-// DICTIONARY
-// ------------------------------
+/* ----------------------------------------------
+   DICTIONARY (UNCHANGED CONTENT)
+---------------------------------------------- */
 function generateDictionary() {
   const container = document.querySelector(".dictionary-container");
   container.innerHTML = "";
@@ -765,9 +765,7 @@ function generateDictionary() {
       <p>${card.upright.meaning}</p>
 
       <h4>Upright Affirmations</h4>
-      <ul>${card.upright.affirmations
-        .map(a => `<li>${a}</li>`)
-        .join("")}</ul>
+      <ul>${card.upright.affirmations.map(a => `<li>${a}</li>`).join("")}</ul>
 
       <h4>Upright Self-Care</h4>
       <p>${card.upright.selfCare}</p>
@@ -776,9 +774,7 @@ function generateDictionary() {
       <p>${card.reversed.meaning}</p>
 
       <h4>Reversed Affirmations</h4>
-      <ul>${card.reversed.affirmations
-        .map(a => `<li>${a}</li>`)
-        .join("")}</ul>
+      <ul>${card.reversed.affirmations.map(a => `<li>${a}</li>`).join("")}</ul>
 
       <h4>Reversed Self-Care</h4>
       <p>${card.reversed.selfCare}</p>
@@ -786,94 +782,96 @@ function generateDictionary() {
 
     container.appendChild(block);
   });
-drawButton.addEventListener("click", () => {
-    const spread = document.getElementById("spread-select").value;
-
-    // Clear old spreads
-    document.getElementById("multi-spread-container").innerHTML = "";
-
-    if (spread === "one") {
-        cardBox.parentElement.style.display = "block";
-        const card = drawRandomCard();
-        showCard(card);
-        return;
-    }
-
-    // hide one-card display
-    cardBox.parentElement.style.display = "none";
-
-    if (spread === "three") {
-        drawThreeCardSpread();
-        return;
-    }
-
-    if (spread === "celtic") {
-        drawCelticCrossSpread();
-        return;
-    }
-});
-
-
-
-function drawThreeCardSpread() {
-    const container = document.getElementById("multi-spread-container");
-    container.innerHTML = ""; // clear old spread
-
-    // hide one-card display
-    cardBox.parentElement.classList.add("hidden");
-
-    const positions = ["Past", "Present", "Future"];
-
-    for (let i = 0; i < 3; i++) {
-        const card = drawRandomCard();
-
-        const cardDiv = document.createElement("div");
-        cardDiv.className = "three-card";
-
-        cardDiv.innerHTML = `
-            <h3>${positions[i]} – ${card.name} (${card.orientation})</h3>
-            <p>${card.keyword}</p>
-            <p>${card.affirmation}</p>
-            <p>${card.selfCare}</p>
-        `;
-
-        container.appendChild(cardDiv);
-    }
 }
 
+/* ----------------------------------------------
+   SPREAD FUNCTIONS
+---------------------------------------------- */
+
+/* --- THREE CARD --- */
+function drawThreeCardSpread() {
+  const container = document.getElementById("multi-spread-container");
+  container.innerHTML = "";
+
+  cardBox.parentElement.style.display = "none";
+
+  const positions = ["Past", "Present", "Future"];
+
+  for (let i = 0; i < 3; i++) {
+    const card = drawRandomCard();
+    const div = document.createElement("div");
+    div.className = "three-card";
+
+    div.innerHTML = `
+      <h3>${positions[i]} – ${card.name} (${card.orientation})</h3>
+      <p>${card.keyword}</p>
+      <p>${card.affirmation}</p>
+      <p>${card.selfCare}</p>
+    `;
+
+    container.appendChild(div);
+  }
+}
+
+/* --- CELTIC CROSS --- */
 function drawCelticCrossSpread() {
-    const container = document.getElementById("multi-spread-container");
-    container.innerHTML = ""; 
+  const container = document.getElementById("multi-spread-container");
+  container.innerHTML = "";
 
-    // hide one-card display
-    cardBox.parentElement.style.display = "none";
+  cardBox.parentElement.style.display = "none";
 
+  const positions = [
+    "1. Present",
+    "2. Challenge",
+    "3. Past",
+    "4. Future",
+    "5. Conscious",
+    "6. Subconscious",
+    "7. Advice",
+    "8. External Influences",
+    "9. Hopes & Fears",
+    "10. Outcome"
+  ];
 
-    const positions = [
-        "1. Present",
-        "2. Challenge",
-        "3. Past",
-        "4. Future",
-        "5. Conscious",
-        "6. Subconscious",
-        "7. Advice",
-        "8. External Influences",
-        "9. Hopes & Fears",
-        "10. Outcome"
-    ];
+  for (let i = 0; i < 10; i++) {
+    const card = drawRandomCard();
+    const div = document.createElement("div");
+    div.className = "celtic-card";
 
-    for (let i = 0; i < 10; i++) {
-        const card = drawRandomCard();
-        
-        const el = document.createElement("div");
-        el.className = "celtic-card";
+    div.innerHTML = `
+      <h3>${positions[i]} – ${card.name} (${card.orientation})</h3>
+      <p>${card.keyword}</p>
+      <p>${card.affirmation}</p>
+      <p>${card.selfCare}</p>
+    `;
 
-        el.innerHTML = `
-            <h3>${positions[i]} – ${card.name} (${card.orientation})</h3>
-            <p>${card.keyword}</p>
-            <p>${card.affirmation}</p>
-            <p>${card.selfCare}</p>
-        `;
+    container.appendChild(div);
+  }
+}
 
-        container.appendChild(el);
-    }
+/* ----------------------------------------------
+   DRAW BUTTON — FINAL, CLEAN, MOBILE-SAFE
+---------------------------------------------- */
+drawButton.addEventListener("click", () => {
+  const spread = document.getElementById("spread-select").value;
+
+  const multi = document.getElementById("multi-spread-container");
+  multi.innerHTML = "";
+
+  if (spread === "one") {
+    cardBox.parentElement.style.display = "block";
+    const card = drawRandomCard();
+    showCard(card);
+    return;
+  }
+
+  if (spread === "three") {
+    drawThreeCardSpread();
+    return;
+  }
+
+  if (spread === "celtic") {
+    drawCelticCrossSpread();
+    return;
+  }
+});
