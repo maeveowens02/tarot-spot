@@ -1,6 +1,26 @@
-/* ----------------------------------------------
-   GLOBAL
-------------------------------------------------*/
+
+    .info-section {
+        max-width: 800px;
+        margin: 60px auto;
+        padding: 25px;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 12px;
+        backdrop-filter: blur(6px);
+        color: #fff;
+    }
+    .info-section h2 {
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 1.6rem;
+    }
+    .info-section p {
+        line-height: 1.6;
+        font-size: 1rem;
+        opacity: 0.9;
+    }
+
+
 * {
   margin: 0;
   padding: 0;
@@ -574,7 +594,7 @@ iframe[id*="google_ads"],
 }
 
 #result-box {
-    text-align: left; /* keeps the oracle meaning clean + readable */
+    text-align: left; 
 }
 
 #result-box {
@@ -620,8 +640,8 @@ iframe[id*="google_ads"],
     opacity: 1;
     box-shadow: 0 0 12px rgba(217,192,140,0.35);
 }
+/* Oracle card settings */
 
-/* Oracle card text */
 .oracle-title {
     font-size: 22px;
     margin-bottom: 12px;
@@ -812,11 +832,9 @@ header {
     line-height: 1.4;
 }
 
-/* ============================================================
-   FINAL MOBILE + SAFARI PATCH — CLEAN + SAFE + FULLY WORKING
-   ============================================================ */
+/* mobile work*/
 
-/* Force hidden sections to collapse properly (iOS fix) */
+/* (iOS fix) */
 .hidden {
     display: none !important;
     opacity: 0 !important;
@@ -836,7 +854,7 @@ section:not(.hidden) {
     pointer-events: auto !important;
 }
 
-/* Nav buttons: bring to top so taps always register */
+/* bring to top so taps always register */
 .nav-bar-wrapper,
 .nav-bar,
 .nav-btn {
@@ -895,4 +913,15 @@ section:not(.hidden) {
     margin-bottom: 1.5rem !important;
     opacity: 1 !important;
     visibility: visible !important;
+}
+#crisis-resources {
+    border-left: 3px solid rgba(255, 150, 255, 0.6);
+    box-shadow: 0 0 20px rgba(255, 150, 255, 0.2);
+    animation: subtlePulse 3s infinite ease-in-out;
+}
+
+@keyframes subtlePulse {
+    0% { box-shadow: 0 0 10px rgba(255,150,255,0.2); }
+    50% { box-shadow: 0 0 22px rgba(255,150,255,0.4); }
+    100% { box-shadow: 0 0 10px rgba(255,150,255,0.2); }
 }
