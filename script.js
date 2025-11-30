@@ -669,7 +669,7 @@ const sections = {
   about: document.getElementById("about"),
   support: document.getElementById("support"),
   privacy: document.getElementById("privacy"),
-  conatct: document.getElementById("contact"),
+  contact: document.getElementById("contact"),
 };
 
 function switchPage(target) {
