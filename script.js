@@ -787,3 +787,87 @@ function generateDictionary() {
     container.appendChild(block);
   });
 }
+// ------------------------------
+// SPREADS
+// ------------------------------
+drawButton.addEventListener("click", () => {
+    const spread = document.getElementById("spread-select").value;
+
+    if (spread === "one") {
+        const card = drawRandomCard();
+        showCard(card);
+    } 
+    
+    else if (spread === "three") {
+        drawThreeCardSpread();
+    } 
+    
+    else if (spread === "celtic") {
+        drawCelticCrossSpread();
+    }
+});
+function drawThreeCardSpread() {
+    const container = cardBox.parentElement;
+
+    // Clear previous card info
+    container.innerHTML = "";
+
+    const positions = ["Past", "Present", "Future"];
+
+    for (let i = 0; i < 3; i++) {
+        const card = drawRandomCard();
+
+        const cardDiv = document.createElement("div");
+        cardDiv.className = "three-card";
+
+        cardDiv.innerHTML = `
+            <h3>${positions[i]} – ${card.name} (${card.orientation})</h3>
+            <p>${card.keyword}</p>
+            <p>${card.affirmation}</p>
+            <p>${card.selfCare}</p>
+        `;
+
+        if (card.orientation === "Reversed") {
+            cardDiv.classList.add("reversed");
+        }
+
+        container.appendChild(cardDiv);
+    }
+}
+function drawCelticCrossSpread() {
+    const container = cardBox.parentElement;
+    container.innerHTML = "";
+
+    const positions = [
+        "1. Present",
+        "2. Challenge",
+        "3. Past",
+        "4. Future",
+        "5. Above / Conscious",
+        "6. Below / Subconscious",
+        "7. Advice",
+        "8. External Influences",
+        "9. Hopes & Fears",
+        "10. Outcome"
+    ];
+
+    for (let i = 0; i < 10; i++) {
+        const card = drawRandomCard();
+
+        const cardDiv = document.createElement("div");
+        cardDiv.className = "celtic-card";
+
+        cardDiv.innerHTML = `
+            <h3>${positions[i]} – ${card.name} (${card.orientation})</h3>
+            <p>${card.keyword}</p>
+            <p>${card.affirmation}</p>
+            <p>${card.selfCare}</p>
+        `;
+
+        if (card.orientation === "Reversed") {
+            cardDiv.classList.add("reversed");
+        }
+
+        container.appendChild(cardDiv);
+    }
+}

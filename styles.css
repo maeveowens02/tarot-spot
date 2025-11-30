@@ -801,12 +801,6 @@ header {
 }
 
 .card-frame.reversed-glow {
-    box-shadow:
-        0 0 20px rgba(255,120,120,0.55),
-        0 0 35px rgba(255,60,60,0.40) !important;
-}
-
-.card-frame.reversed-glow {
     overflow: visible !important;
 }
 .card-frame.reversed-glow {
@@ -1010,3 +1004,29 @@ section:not(.hidden) {
         filter: blur(4px);
     }
 }
+.spread-selector {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.spread-selector select {
+    background: rgba(22,18,26,0.65);
+    border: 1px solid #b49a72;
+    color: #e7dcc9;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+.three-card, .celtic-card {
+    border: 1px solid #b49a72;
+    background: rgba(20,15,26,0.55);
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.celtic-card h3, .three-card h3 {
+    color: #f4ecdd;
+    margin-bottom: 0.5rem;
+}
+

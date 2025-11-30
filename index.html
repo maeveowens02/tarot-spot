@@ -25,14 +25,14 @@
         yourself. Whether you're here for insight, healing, or curiosity, you're in 
         the right place.
     </p>
-    <p class="small-desc">Pull a card, read the meaning, and reconnect with yourself.</p>
+    <p class="small-desc">Pull a card (or cards), read the meaning, and reconnect with yourself.</p>
 
 </div>
 
     <!-- NAVIGATION -->
     <div class="nav-bar-wrapper">
         <div class="nav-bar">
-            <button class="nav-btn active" data-target="daily-draw">One Card Draw</button>
+            <button class="nav-btn active" data-target="daily-draw">Card Draws</button>
             <button class="nav-btn" data-target="dictionary">Card Meanings</button>
             <button class="nav-btn" data-target="about">About</button>
             <button class="nav-btn" data-target="support">Support</button>
@@ -54,7 +54,16 @@
 
         <!-- DAILY DRAW SECTION -->
         <section id="daily-draw">
-            <h2>One Card Pull</h2>
+            <div class="spread-selector">
+    <label for="spread-select">Spread:</label>
+    <select id="spread-select">
+        <option value="one">One Card</option>
+        <option value="three">Three Card (Past/Present/Future)</option>
+        <option value="celtic">Celtic Cross (10 Cards)</option>
+    </select>
+</div>
+
+            <h2>Card Pulls</h2>
 
             <div class="reverse-toggle">
                 <span>Allow reversals?</span>
