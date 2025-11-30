@@ -960,42 +960,49 @@ section:not(.hidden) {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
 }
-/* FLOATING BACKGROUND ORBS */
-.orb {
+/* STAR GLOW BACKGROUND ELEMENTS */
+.star {
     position: absolute;
-    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #fff8d9, #ffcc66, rgba(0,0,0,0));
+    clip-path: polygon(
+        50% 0%, 
+        61% 35%, 
+        98% 35%, 
+        68% 57%, 
+        79% 91%, 
+        50% 70%, 
+        21% 91%, 
+        32% 57%, 
+        2% 35%, 
+        39% 35%
+    );
+    opacity: 0.5;
+    filter: blur(1px);
+    animation: twinkle 4s ease-in-out infinite;
     z-index: -1;
-    opacity: 0.55;
-    filter: blur(2px);
-    animation: orb-breathe 6s ease-in-out infinite;
 }
 
-/* Left orb */
-.orb-left {
-    width: 260px;
-    height: 260px;
+/* LEFT STAR */
+.star-left {
     top: 10%;
-    left: -50px;
-    background: radial-gradient(circle, #f8aa02, #691f0d);
-    box-shadow: 0 0 40px #f1ff5c80;
+    left: -40px;
 }
 
-/* Right orb */
-.orb-right {
-    width: 300px;
-    height: 300px;
-    bottom: 10%;
-    right: -60px;
-    background: radial-gradient(circle, #b301ff, #2f0c4e);
-    box-shadow: 0 0 50px #ec01fd80;
+/* RIGHT STAR */
+.star-right {
+    bottom: 15%;
+    right: -50px;
 }
 
-/* breathing animation */
-@keyframes orb-breathe {
-    0%   { transform: scale(1); }
-    50%  { transform: scale(1.08); }
-    100% { transform: scale(1); }
+/* Twinkle animation */
+@keyframes twinkle {
+    0% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.12); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 0.5; }
 }
+
 
 /* RESPONSIVE FIXES */
 @media (max-width: 900px) {
