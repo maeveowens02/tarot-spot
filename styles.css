@@ -966,3 +966,47 @@ section:not(.hidden) {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
 }
+/* FLOATING BACKGROUND ORBS */
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.55;
+    filter: blur(2px);
+    animation: orb-breathe 6s ease-in-out infinite;
+}
+
+/* Left orb */
+.orb-left {
+    width: 260px;
+    height: 260px;
+    top: 10%;
+    left: -50px;
+    background: radial-gradient(circle, #f8aa02, #691f0d);
+    box-shadow: 0 0 40px #f1ff5c80;
+}
+
+/* Right orb */
+.orb-right {
+    width: 300px;
+    height: 300px;
+    bottom: 10%;
+    right: -60px;
+    background: radial-gradient(circle, #b301ff, #2f0c4e);
+    box-shadow: 0 0 50px #ec01fd80;
+}
+
+/* breathing animation */
+@keyframes orb-breathe {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 900px) {
+    .orb-left, .orb-right {
+        opacity: 0.35;
+        filter: blur(4px);
+    }
+}
