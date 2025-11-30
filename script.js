@@ -786,7 +786,6 @@ function generateDictionary() {
 
     container.appendChild(block);
   });
-}
 drawButton.addEventListener("click", () => {
     const spread = document.getElementById("spread-select").value;
 
@@ -794,15 +793,13 @@ drawButton.addEventListener("click", () => {
     document.getElementById("multi-spread-container").innerHTML = "";
 
     if (spread === "one") {
-        // show one-card area
         cardBox.parentElement.style.display = "block";
-
         const card = drawRandomCard();
         showCard(card);
         return;
     }
 
-    // hide one-card area
+    // hide one-card display
     cardBox.parentElement.style.display = "none";
 
     if (spread === "three") {
@@ -815,6 +812,7 @@ drawButton.addEventListener("click", () => {
         return;
     }
 });
+
 
 
 function drawThreeCardSpread() {
@@ -883,21 +881,4 @@ function drawCelticCrossSpread() {
 drawButton.addEventListener("click", () => {
     const spread = document.getElementById("spread-select").value;
 
-    // Clear previous spread
-    document.getElementById("multi-spread-container").innerHTML = "";
-
-    if (spread === "one") {
-        cardBox.parentElement.classList.remove("hidden");
-        const card = drawRandomCard();
-        showCard(card);
-    }
-
-    if (spread === "three") {
-        drawThreeCardSpread();
-    }
-
-    if (spread === "celtic") {
-        drawCelticCrossSpread();
-    }
-});
-
+   
