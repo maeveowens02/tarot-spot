@@ -877,8 +877,3 @@ function drawCelticCrossSpread() {
 
         container.appendChild(el);
     }
-}
-drawButton.addEventListener("click", () => {
-    const spread = document.getElementById("spread-select").value;
-
-   
