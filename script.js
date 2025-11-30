@@ -668,6 +668,8 @@ const sections = {
   dictionary: document.getElementById("dictionary"),
   about: document.getElementById("about"),
   support: document.getElementById("support"),
+  privacy: document.getElementById("privacy"),
+  conatct: document.getElementById("contact"),
 };
 
 function switchPage(target) {
