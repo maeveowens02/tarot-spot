@@ -1086,3 +1086,10 @@ section:not(.hidden) {
     gap: 1rem;
     width: 100%;
 }
+/* Fix mobile blocking multi-card draws */
+#daily-draw {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+}
