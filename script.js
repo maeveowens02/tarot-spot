@@ -757,7 +757,7 @@ function generateDictionary() {
     const cleanID = card.name.toLowerCase().replace(/\s+/g, "-");
 
     block.innerHTML = `
-       <img src="images/${cleanID}.png?v=${Date.now()}"
+       <img src="/images/${cleanID}.png?v=${cacheTag}">
 
              class="dictionary-card-img" 
              data-target="${cleanID}-details">
