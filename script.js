@@ -787,45 +787,35 @@ function generateDictionary() {
     container.appendChild(block);
   });
 }
-// ------------------------------
-// SPREADS (FIXED VERSION)
-// ------------------------------
 drawButton.addEventListener("click", () => {
     const spread = document.getElementById("spread-select").value;
 
-    // ONE CARD (your original working logic restored)
+    // Clear old spreads
+    document.getElementById("multi-spread-container").innerHTML = "";
+
     if (spread === "one") {
-        // fully reset the card frame content before drawing
-        cardBox.classList.remove("reversed");
-        cardBox.parentElement.classList.remove("reversed-glow");
-
-        cardName.textContent = "";
-        cardKeyword.textContent = "";
-        cardAffirmation.textContent = "";
-        cardSelfCare.textContent = "";
-
-        cardName.classList.add("hidden");
-        cardKeyword.classList.add("hidden");
-        cardAffirmation.classList.add("hidden");
-        cardSelfCare.classList.add("hidden");
+        // show one-card area
+        cardBox.parentElement.style.display = "block";
 
         const card = drawRandomCard();
         showCard(card);
         return;
     }
 
-    // THREE-CARD
+    // hide one-card area
+    cardBox.parentElement.style.display = "none";
+
     if (spread === "three") {
         drawThreeCardSpread();
         return;
     }
 
-    // CELTIC CROSS
     if (spread === "celtic") {
         drawCelticCrossSpread();
         return;
     }
 });
+
 
 function drawThreeCardSpread() {
     const container = document.getElementById("multi-spread-container");
@@ -858,7 +848,8 @@ function drawCelticCrossSpread() {
     container.innerHTML = ""; 
 
     // hide one-card display
-    cardBox.parentElement.classList.add("hidden");
+    cardBox.parentElement.style.display = "none";
+
 
     const positions = [
         "1. Present",
