@@ -5,74 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mystery Music Machine</title>
 
-    <!-- main site styling -->
-     <link rel="stylesheet" href="mmm.css">
     <link rel="stylesheet" href="styles.css">
-    
-
-    <style>
-        /* ensure back button stays ABOVE everything */
-        .back-button {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            z-index: 9999;
-            color: bisque;
-            font-size: 1.2rem;
-            padding: 6px 12px;
-            border-radius: 6px;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(180,154,114,0.4);
-            text-decoration: none;
-            font-family: inherit;
-            text-shadow: 0 0 8px rgba(180,154,114,0.6);
-        }
-        .back-button:hover {
-            box-shadow: 0 0 10px rgba(180,154,114,0.5);
-        }
-    </style>
+    <link rel="stylesheet" href="mmm.css">
 </head>
 
 <body>
 
-    <!-- ⭐ BACK BUTTON ALWAYS VISIBLE ⭐ -->
     <a href="index.html" class="back-button">← Back</a>
-
-    <!-- your full existing Mystery Music Machine goes below -->
 
     <h1 class="mmm-title">Mystery Music Machine</h1>
 
-    <div class="sign-grid">
-        <div class="sign">Aries</div>
-        <div class="sign">Taurus</div>
-        <div class="sign">Gemini</div>
-        <div class="sign">Cancer</div>
-        <div class="sign">Leo</div>
-        <div class="sign">Virgo</div>
-        <div class="sign">Libra</div>
-        <div class="sign">Scorpio</div>
-        <div class="sign">Sagittarius</div>
-        <div class="sign">Capricorn</div>
-        <div class="sign">Aquarius</div>
-        <div class="sign">Pisces</div>
-    </div>
+    <div class="mmm-wrapper">
 
-    <section id="result-box">
-
-        <div class="cassette">
-            <div class="label">✦ Mystery Music Machine ✦</div>
-            <p class="song-title"></p>
-            <p class="song-artist"></p>
-
-            <div class="window">
-                <div class="reel-left"></div>
-                <div class="reel-right"></div>
-            </div>
+        <div class="sign-grid">
+            <div class="sign">Aries</div>
+            <div class="sign">Taurus</div>
+            <div class="sign">Gemini</div>
+            <div class="sign">Cancer</div>
+            <div class="sign">Leo</div>
+            <div class="sign">Virgo</div>
+            <div class="sign">Libra</div>
+            <div class="sign">Scorpio</div>
+            <div class="sign">Sagittarius</div>
+            <div class="sign">Capricorn</div>
+            <div class="sign">Aquarius</div>
+            <div class="sign">Pisces</div>
         </div>
 
-        <p class="horoscope-text"></p>
+        <section id="result-box">
 
-    </section>
+            <div class="cassette">
+                <div class="label">✦ Mystery Music Machine ✦</div>
+                <p class="song-title"></p>
+                <p class="song-artist"></p>
+
+                <div class="window">
+                    <div class="reel-left"></div>
+                    <div class="reel-right"></div>
+                </div>
+            </div>
+
+            <p class="horoscope-text"></p>
+
+        </section>
+
+    </div>
 
     <script src="mmm.js"></script>
 </body>
