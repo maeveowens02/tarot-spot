@@ -4,69 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mystery Music Machine</title>
-
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="mmm.css?v=2">
-
+    <link rel="stylesheet" href="mmm.css">
 </head>
 
 <body>
 
-    <a href="index.html" class="back-button">← Back</a>
+<a href="index.html" class="back-btn">← Back</a>
 
-    <div class="mmm-page">
+<h1 class="mmm-title">Mystery Music Machine</h1>
 
-        <h1 class="mmm-title">Mystery Music Machine</h1>
-
-        <div class="sign-grid">
-            <div class="sign">Aries</div>
-            <div class="sign">Taurus</div>
-            <div class="sign">Gemini</div>
-            <div class="sign">Cancer</div>
-            <div class="sign">Leo</div>
-            <div class="sign">Virgo</div>
-            <div class="sign">Libra</div>
-            <div class="sign">Scorpio</div>
-            <div class="sign">Sagittarius</div>
-            <div class="sign">Capricorn</div>
-            <div class="sign">Aquarius</div>
-            <div class="sign">Pisces</div>
-        </div>
-
-        <section id="result-box">
-
-      <div class="cassette">
-    <div class="label">✦ Mystery Music Machine ✦</div>
-
-    <p class="song-title"></p>
-    <p class="song-artist"></p>
-
-    <div class="window">
-        <div class="reel-left"></div>
-        <div class="reel-right"></div>
-    </div>
-</div>
-<div class="music-card">
-    <p class="mc-title"></p>
-    <p class="mc-artist"></p>
-    <a class="mc-link" href="#" target="_blank" rel="noopener noreferrer">✦ Listen on Spotify ✦</a>
+<div class="signs-container">
+    <button class="sign-btn" data-sign="Aries">Aries</button>
+    <button class="sign-btn" data-sign="Taurus">Taurus</button>
+    <button class="sign-btn" data-sign="Gemini">Gemini</button>
+    <button class="sign-btn" data-sign="Cancer">Cancer</button>
+    <button class="sign-btn" data-sign="Leo">Leo</button>
+    <button class="sign-btn" data-sign="Virgo">Virgo</button>
+    <button class="sign-btn" data-sign="Libra">Libra</button>
+    <button class="sign-btn" data-sign="Scorpio">Scorpio</button>
+    <button class="sign-btn" data-sign="Sagittarius">Sagittarius</button>
+    <button class="sign-btn" data-sign="Capricorn">Capricorn</button>
+    <button class="sign-btn" data-sign="Aquarius">Aquarius</button>
+    <button class="sign-btn" data-sign="Pisces">Pisces</button>
 </div>
 
-
-</div>
-
-
-
-
-            <p class="horoscope-text"></p>
-
-        </section>
-
+<div class="mmm-wrapper">
+    <div class="cassette">
+        <h2 class="cassette-title">✦ Mystery Music Machine ✦</h2>
+        <div class="tape-window"></div>
     </div>
 
-    <script src="mmm.js?v=1234"></script>
+    <div class="result-area">
+        <img src="vinyl.png" class="album-art" id="albumArt">
+        <h2 id="songTitle"></h2>
+        <h3 id="songArtist"></h3>
+        <a id="listenLink" href="#" target="_blank" class="listen-btn">✦ Listen on Spotify ✦</a>
+        <p id="horoscopeText"></p>
+    </div>
+</div>
 
+<script src="mmm.js"></script>
 
 </body>
 </html>
+
+
+
 
