@@ -1,153 +1,138 @@
+
 body {
-    background: #0d0d0d;
-    color: #e9d8b9;
-    font-family: "Inter", sans-serif;
+    margin: 0;
+    background: #0c0c0c;
+    font-family: 'Poppins', sans-serif;
+    color: #f8e8c8;
     text-align: center;
-    padding-bottom: 50px;
 }
 
-.back-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: #e9d8b9;
-    padding: 8px 14px;
-    border: 1px solid #e9d8b9;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 18px;
+h1 {
+    font-size: 36px;
+    margin-top: 30px;
+    font-weight: 600;
+    text-shadow: 0 0 15px rgba(255, 185, 85, 0.35);
 }
 
-.mmm-title {
-    font-size: 42px;
-    margin-top: 60px;
-    text-shadow: 0 0 15px rgba(255, 210, 140, 0.55);
-}
 
-.signs-container {
+.sign-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 12px;
+    gap: 14px;
+    width: 85%;
     max-width: 900px;
     margin: 30px auto;
 }
 
 .sign-btn {
+    padding: 12px 0;
+    border: 1px solid rgba(255, 200, 140, 0.25);
     background: #111;
-    border: 1px solid rgba(255, 220, 150, 0.35);
-    padding: 14px 18px;
-    color: #e9d8b9;
-    border-radius: 10px;
-    font-size: 18px;
+    border-radius: 12px;
+    color: #f8e8c8;
+    font-size: 16px;
     cursor: pointer;
     transition: 0.25s;
 }
 
 .sign-btn:hover {
-    background: rgba(255, 200, 120, 0.08);
-    box-shadow: 0 0 12px rgba(255, 200, 120, 0.15);
+    background: #1a1a1a;
+    box-shadow: 0 0 15px rgba(255, 170, 80, 0.25);
 }
 
-.mmm-wrapper {
-    max-width: 600px;
-    margin: 40px auto 0;
-    padding: 25px;
-    background: rgba(30, 0, 0, 0.4);
-    border: 1px solid rgba(255, 210, 120, 0.25);
-    border-radius: 14px;
-    box-shadow: 0 0 40px rgba(255, 200, 120, 0.15);
+
+.result-area {
+    padding-top: 20px;
+    margin-bottom: 40px;
 }
 
-.cassette {
-    padding: 20px;
-    border: 1px solid rgba(255, 210, 120, 0.25);
-    border-radius: 14px;
-    margin-bottom: 20px;
-}
-
-.cassette-title {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-.tape-window {
-    height: 80px;
+.result-box {
     width: 90%;
+    max-width: 500px;
     margin: 0 auto;
-    background: #161616;
-    border-radius: 8px;
 }
+
 
 .album-art {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
-    margin: 20px auto;
+    border-radius: 12px;
     display: block;
-    border-radius: 10px;
-    box-shadow: 0 0 25px rgba(255, 200, 120, 0.4);
+    margin: 0 auto 25px auto;
+    box-shadow: 0 0 28px rgba(255, 180, 85, 0.3);
 }
 
+
 #songTitle {
-    font-size: 26px;
-    margin-top: 10px;
+    font-size: 32px;
+    margin-bottom: 8px;
+    font-weight: 600;
 }
 
 #songArtist {
-    font-size: 22px;
-    margin-top: 5px;
+    font-size: 20px;
+    margin-bottom: 22px;
     opacity: 0.85;
 }
 
+
 .listen-btn {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 10px 20px;
-    color: #f5e3c1;
-    text-decoration: none;
-    border: 1px solid rgba(255, 220, 150, 0.4);
-    border-radius: 8px;
-    transition: 0.2s;
+    background: #130d0d;
+    padding: 12px 25px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 200, 140, 0.25);
+    color: #f8e8c8;
+    cursor: pointer;
+    transition: 0.25s;
+    font-size: 17px;
 }
 
 .listen-btn:hover {
-    background: rgba(255, 220, 150, 0.08);
+    background: #1d1616;
+    box-shadow: 0 0 20px rgba(255, 180, 85, 0.25);
 }
 
-#horoscopeText {
+.horoscope {
     margin-top: 25px;
+    opacity: 0.95;
     line-height: 1.6;
-    color: #f5dcb6;
-}
-.result-area {
-    margin-top: 30px;
-}
-.album-art {
-    max-width: 180px;
-    max-height: 180px;
-    margin-top: 25px;
+    font-size: 18px;
 }
 
-.album-art {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 8px 14px;
+    font-size: 15px;
     border-radius: 10px;
-    margin-top: 25px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 0 25px rgba(255, 180, 80, 0.25);
+    border: 1px solid rgba(255, 200, 140, 0.25);
+    background: #111;
+    color: #f8e8c8;
+    cursor: pointer;
+    transition: 0.25s;
 }
-.result-area {
-    margin-top: 30px;
+
+.back-btn:hover {
+    background: #1c1c1c;
 }
-.cassette {
-    margin-bottom: 30px;
-}
-.cassette {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 450px;
+
+
+@media (max-width: 680px) {
+
+    .sign-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .album-art {
+        width: 170px;
+        height: 170px;
+    }
+
+    #songTitle {
+        font-size: 28px;
+    }
 }
