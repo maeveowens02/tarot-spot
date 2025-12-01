@@ -176,7 +176,7 @@ function playSign(sign) {
     document.getElementById("listenLink").href =
         `https://open.spotify.com/track/${random.id}`;
 
-    document.getElementById("albumArt").src = "vinyl.png";
+    document.getElementById("albumArt").src = "vinyl.jpeg";
 
     document.getElementById("horoscopeText").innerText =
         horoscopes[sign];
