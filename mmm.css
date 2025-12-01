@@ -36,16 +36,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 3rem;
+    gap: 4rem;
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 2rem;
 }
 
-.sign-grid {
+.sign-column {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
+
 
 .sign {
     padding: 12px 22px;
