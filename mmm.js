@@ -165,11 +165,20 @@ signs.forEach(sign => {
         songArtist.textContent = song.artist;
         horoscopeText.textContent = horoscopes[chosen];
 
-        const frame = document.querySelector(".preview-frame");
+     // Show the music card
+const card = document.querySelector(".music-card");
+card.style.display = "block";
 
-        frame.src = "about:blank";
-        setTimeout(() => {
-            frame.src = `https://open.spotify.com/embed/track/${song.id}?utm_source=generator&theme=0`;
-        }, 80);
+// Fill in card text
+document.querySelector(".mc-title").textContent = song.title;
+document.querySelector(".mc-artist").textContent = song.artist;
+
+// Build link
+const mcLink = document.querySelector(".mc-link");
+mcLink.href = `https://open.spotify.com/track/${song.id}`;
+mcLink.target = "_blank";
+mcLink.rel = "noopener noreferrer";
+
+console.log("Link set to:", mcLink.href);
     });
 });
