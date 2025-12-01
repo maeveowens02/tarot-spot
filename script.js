@@ -889,3 +889,24 @@ drawButton.addEventListener("click", () => {
     return;
   }
 });
+// ✦ MUSIC MACHINE POPUP LOGIC ✦
+
+const musicModal = document.getElementById("musicModal");
+const musicClose = document.querySelector(".music-close");
+
+// open popup
+document.querySelector(".open-music").addEventListener("click", () => {
+    musicModal.style.display = "flex";
+});
+
+// close popup
+musicClose.addEventListener("click", () => {
+    musicModal.style.display = "none";
+});
+
+// close when clicking outside box
+musicModal.addEventListener("click", (e) => {
+    if (e.target === musicModal) {
+        musicModal.style.display = "none";
+    }
+});
