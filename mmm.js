@@ -132,7 +132,8 @@ const horoscopes = {
 
 
 function getRandomSong(sign) {
-    const list = songs[sign];
+    const list = songs[sign.replace(/\s+/g, "").trim()];
+
     return list[Math.floor(Math.random() * list.length)];
 }
 
@@ -154,19 +155,21 @@ const horoscopeText = document.querySelector(".horoscope-text");
 
 signs.forEach(sign => {
     sign.addEventListener("click", () => {
-        const chosen = sign.textContent.trim();
-        const song = getRandomSong(chosen);
 
+        const chosen = sign.textContent.replace(/\s+/g, "").trim();
+
+        const song = getRandomSong(chosen);
         animateCassette();
 
         songTitle.textContent = song.title;
         songArtist.textContent = song.artist;
         horoscopeText.textContent = horoscopes[chosen];
-       const frame = document.querySelector(".preview-frame");
 
-frame.src = "about:blank"; // hard reset
-setTimeout(() => {
-    frame.src = `https://open.spotify.com/embed/track/${song.id}?utm_source=generator&theme=0`;
-}, 100);
+        const frame = document.querySelector(".preview-frame");
+
+        frame.src = "about:blank";
+        setTimeout(() => {
+            frame.src = `https://open.spotify.com/embed/track/${song.id}?utm_source=generator&theme=0`;
+        }, 80);
     });
 });
