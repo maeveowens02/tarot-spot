@@ -1133,9 +1133,21 @@ section:not(.hidden) {
     box-shadow: 0 0 18px rgba(255,60,60,0.4);
 }
 .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
     color: bisque;
-    font-size: 1rem;
-    margin: 1rem;
-    display: inline-block;
-    text-shadow: 0 0 8px rgba(180,154,114,0.45);
+    font-family: inherit;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 6px 12px;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(180,154,114,0.4);
+    border-radius: 6px;
+    text-shadow: 0 0 8px rgba(180,154,114,0.6);
+}
+
+.back-button:hover {
+    box-shadow: 0 0 10px rgba(180,154,114,0.5);
 }
