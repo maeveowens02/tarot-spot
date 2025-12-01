@@ -1132,3 +1132,10 @@ section:not(.hidden) {
     border: 1px solid #b49a72;
     box-shadow: 0 0 18px rgba(255,60,60,0.4);
 }
+.back-button {
+    color: bisque;
+    font-size: 1rem;
+    margin: 1rem;
+    display: inline-block;
+    text-shadow: 0 0 8px rgba(180,154,114,0.45);
+}
