@@ -1,2 +1,2 @@
 # tarot-spot
-a tarot drawing site with emphasis on self help and love
+my first project. a tarot based site that includes oracles and music 
